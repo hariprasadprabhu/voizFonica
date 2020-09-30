@@ -1,0 +1,43 @@
+
+<div style="padding-left: 20px;">
+  <div class="Register">
+  <div>
+  <form #RegForm="ngForm" (ngSubmit)="registerForm()">
+    
+       <br>
+      <div class="Register-form">
+        
+        <div >
+          <div class="validate" *ngIf="(name.invalid && name.touched) || name.dirty">
+            <small *ngIf="name.errors?.required" class="text-danger">User name is required</small>
+            </div>
+            <label style="color: black;" for="myfile">Edit Your User Name Here:</label>
+        <input type="text" placeholder="Enter User Name *" name="fname" id="fname" required [(ngModel)]="cust.userName"  #name="ngModel"
+        [class.is-invalid]="(name.invalid && name.touched) || name.dirty"
+        >
+
+
+        <div class="validate" *ngIf="(email.invalid && email.touched) || email.dirty">
+          <small *ngIf="email.errors?.required" class="text-danger">Email is required</small>
+          <small *ngIf="email.errors?.pattern" class="text-danger">Please provide a valid email address</small>
+          </div>
+          <label style="color: black;" for="myfile">Edit Your Email Here:</label>
+        <input type="email" placeholder="Enter Email *" name="email" id="email" required pattern="^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" ngModel="pwd" [(ngModel)]="cust.emailId"  #email="ngModel"
+        [class.is-invalid]="(email.invalid && email.touched) || email.dirty"
+        >
+        <label style="color: black;" for="myfile">Select a file:</label>
+      <input type="file" id="myfile" name="myfile"><br><br>
+        
+         
+          
+           
+        
+        
+      
+
+      </div>
+      <button [disabled]="RegForm.form.invalid" type="submit"  class="btn btn-success" name="submit" id="submit">Submit</button><br><br>
+      <div class="container signin">
+      </div></div> <br> <br>
+    </form>
+  </div></div>

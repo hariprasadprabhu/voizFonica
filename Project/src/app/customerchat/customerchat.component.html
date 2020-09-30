@@ -1,0 +1,49 @@
+<app-headernav-prepaid *ngIf="service=='prepaid'"></app-headernav-prepaid>
+<app-headernav-postpaid *ngIf="service=='postpaid'"></app-headernav-postpaid>
+<div style="padding-top: 4%; background-color: rgb(247, 247, 247);" class="container-fluid">
+  <div class="row">
+    
+    <div class="col-sm-3">
+      <br><br><br>
+      <h1 style="margin-top: 19%;">Hi welcome {{name}} ...</h1>
+      <br><br><br><br><br><br>
+      <h2>Do you have any queries don't worry you are at the right place !!</h2>
+      <h2>Ask your questions with our EXPERTS through this live chat.</h2>
+
+
+    </div>
+    <div class="col-sm-4">
+      <img style="height:100%;width: 100%;" src="/assets/Images/personchat.png">
+
+    </div>
+    <div class="col-sm-5">
+      <h2 align="center">Chat Here With Customer Support Person</h2>
+      <div style="height: 500px;border: solid;border-color: black;width: 550px; overflow: scroll;" #scrollMe [scrollTop]="scrollMe.scrollHeight">
+        <div class="container">
+            <img src="/assets/Images/adminside.png" alt="Avatar" style="width:100%;">
+            <p style="float: left;">Hello. How can i help you?</p>
+            <span class="time-right">11:00</span>
+          </div>
+    <div *ngFor="let item of chats | async">
+    <div   *ngIf="item.admin_id!=0" class="container">
+      <img src="/assets/Images/adminside.png" alt="Avatar" style="width:100%;">
+      <p style="float: left;">{{item.message}}</p>
+      <span class="time-right">11:00</span>
+    </div>
+    
+    <div style="margin: 20px;" *ngIf="item.admin_id==0" class="container darker">
+      <img src="/assets/Images/customerside.jpg" alt="Avatar" class="right" style="width:100%;">
+      <p style="float: right;">{{item.message}}</p>
+      <span class="time-left">11:01</span>
+    </div>
+    </div>
+    </div>
+    <div style="margin-top: 1%;" align="center">
+    <input style="margin-left: -60px;width: 450px;height: 30px;" placeholder="Type your text here.." type="text" id="text" [(ngModel)]="chat.message"  #msg="ngModel" class="input">&nbsp;&nbsp;&nbsp;<button style="width: 85px;height: 30px;" class="btn-primary" (click)="call()">Send</button>
+    </div>
+  </div>
+    </div>
+  </div>
+
+
+

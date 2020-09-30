@@ -1,0 +1,42 @@
+.Register
+{  
+    margin:0px;
+    height: 500px;
+    width: 100%;
+    
+}
+.Register-form {
+    
+    width: 400px;
+    background: #fff;
+    background-color: rgb(186, 149, 221);
+    color: white;
+    border-radius: 10px;
+
+        
+    
+ }
+ #fname,#lname,#email,#id,#psw,#psw-repeat,#ph{
+    width: 100%;
+    display: block;
+    border: none;
+    border-bottom: 2px solid #ebebeb;
+    padding: 5px 0;
+    color: #222;
+    margin-bottom: 31px;
+    font-family: 'Roboto Slab';
+     }
+ input:focus{
+      color: #222;
+      border-bottom: 2px solid #4966b1; 
+    }
+#agree-term
+{
+    margin-top: 5px;
+    float: left;
+}
+.validate
+{
+    margin-top: 0px;
+    margin-bottom: 10px;
+}

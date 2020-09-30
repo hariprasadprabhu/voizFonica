@@ -1,0 +1,527 @@
+<!-- <div class="container"><form #loginform="ngForm" (ngSubmit)="registerForm()">
+    <small class="text-danger">{{msg}}</small>
+    <div class="form-group">
+      <label for="phone">Mobile Number:</label>
+      <input type="email" class="form-control" placeholder="Enter Mobile Number" name="email" [(ngModel)]=cust.phoneNum>
+    </div>
+    <div class="form-group">
+        <label for="phone">Email:</label>
+        <input type="email" class="form-control" placeholder="Enter email" name="email" [(ngModel)]=cust.emailId>
+      </div>
+      <div class="form-group">
+        <label for="phone">Username:</label>
+        <input type="email" class="form-control" placeholder="Enter username" name="email" [(ngModel)]=cust.userName>
+      </div>
+    <div class="form-group">
+      <label for="pwd">Password:</label>
+      <input type="password" class="form-control" placeholder="Enter password" name="pwd" [(ngModel)]=cust.password>
+    </div>
+    
+    <button type="submit" class="btn btn-primary">sign up</button>
+  </form>
+</div> -->
+<app-header></app-header>
+
+
+
+
+<div class="modal fade" id="modalLoginForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+  aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">TERMS AND CONDITIONS</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      
+<div class="overflow-auto" style="overflow: auto;height: 300px;">
+  <p style="padding: 5%;">
+1.         General<br>
+       The following terms and conditions of service (“Terms of Service”) govern your use of the Services as defined below. Any All Telecom Korea document(s) describing the plans, features or products you have selected and any other document(s) incorporated by reference (collectively, “Governing Documents”) together with these Terms of Service constitute our agreement with you (“Agreement”). If there is any inconsistency between the Governing Documents and these Terms of Service, these Terms of Service will prevail.
+
+1.3       “us”, “we”, “our” or “ourselves” means the All Telecom Korea entity(ies) named in the Agreement.
+
+1.4       “Service” or “Services” means the Internet services (using either high-speed digital subscriber line (“DSL”), cable, wireless or other technologies), additional services, capabilities added onto the preceding services, and bundles of any of the foregoing services to which you subscribe under the Agreement or receive from or through All Telecom Korea, including related documentation, Software (as defined in Section 1.6) and Equipment (as defined in Section 1.5).
+
+1.5       “Equipment” means any device, equipment or hardware used to access the Services or used in conjunction with the Services, and in the case of Equipment supplied by or through us also includes all related documentation.
+
+1.6       “Software” means any software used to access the Services or used in conjunction with the Services, and in the case of Software supplied by or through us also includes all related documentation.
+
+1.7       “Residents of Québec” means residents of Québec who enter into an Agreement or to whom the Consumer Protection Act (Québec) applies.
+
+1.8       You have chosen to subscribe to one or more Services. Your order for each Service will be confirmed and you will have entered into a binding contract with us with regard to that Service upon the earliest occurrence of one of the following: (1) you submit your online order and it is accepted by us; (2) your telephone order is confirmed by email or other form; or (3) you execute an order provided to you in hard copy paper form which is returned to us.
+
+1.9       The Agreement applies to all Services obtained by you from us and runs from the date that the contract for the first Service is formed with you as aforesaid until either: (1) you give us notice, as and when permitted by the Agreement, of termination of the Agreement or of the last Service provided by us under the Agreement; or (2) we terminate the Agreement as permitted by the Agreement. The entire period of the duration of the Agreement is hereinafter called “Term”.
+
+1.10     Herein the terms “you”, “your” and “yours” refer not only to you, but also include every person you authorize to act as your agent with regard to a Service or to use the Service through one or more accounts we have designated and provided to you (all such accounts hereinafter collectively called “Account” or “Accounts”).
+
+1.11     Your Account information may, from time to time, be disclosed to other members of the All Telecom Korea organization and to our agents and dealers in order to service your Account, respond to your questions and telemarket and promote additional products and services offered by members of the All Telecom Korea organization that may interest you. If you do not wish to receive offers or information from related All Telecom Korea entities, please contact All Telecom Korea at the address set out below.
+
+1.12     Certain content and software employed in the provision of the Service may be provided by third parties (hereinafter called “Affiliated Partners”), including facilities and services of other providers of telecommunications services (such providers hereinafter collectively called “Carriers”).
+
+1.13     Any Software supplied to you or otherwise made available to you in connection with the Service will be subject to the terms of an associated Software end-user license agreement (“EULA” or “Software License Agreement”) and shall remain our property or that of our agents or suppliers, as applicable. You shall take appropriate steps to protect same against loss or damage. A copy of the applicable Software License Agreement will either be included with the Software or will be presented during the installation of the Software. It is your responsibility to review and agree to the terms and conditions of the applicable Software License Agreements before installing or using the Software. Unless otherwise provided in the applicable Software License Agreement, a Software License Agreement ends when your subscription to all Services employing the corresponding Software terminates, and all Software License Agreements will terminate upon termination of the Agreement. Upon termination of a Software License Agreement you must forthwith return or destroy any copies of the corresponding Software in your possession.
+
+1.14     All intellectual property rights in the Software supplied by us are owned by us, our Carriers and/or other Affiliated Partners or their suppliers, and are protected by applicable copyright laws. All of these parties retain any and all rights not expressly granted under the applicable Software License Agreement.
+
+1.15     As a condition of using each Service, you agree to and must comply with the Agreement. The Agreement constitutes a binding contract between you and us with respect to the provision of each Service to which you subscribe by us and is binding on both you and us. By agreeing to the Agreement, you also agree to the terms of any Software License Agreement for Software supplied to you in connection with the Service, and you further agree that the terms of any such Software License Agreement also form part of the Agreement.
+
+1.16     In order to obtain a subscription to a Service, you must also be of the age of majority according to laws of the Province or Territory of Canada applicable to the Agreement and by agreeing to the terms of the Agreement you represent that you are of the age of majority according to such applicable laws.
+
+1.17     From time to time, we may establish policies, rules and limits (together, the “Policies”) concerning use of the Services, Equipment and any products, content, applications or services used in conjunction with the Services or Equipment. Your use of the Services is subject to these Policies, which are incorporated into these Terms of Service by reference. We will provide you with notice of the Policies and of changes to the Policies. Our Acceptable Use Policy (“AUP”) is incorporated by reference into these Terms of Service. It is also available here. In addition, when using certain other services, you may be subject to additional terms (which shall be communicated to you and posted from time to time) applicable to such services and which shall be incorporated by reference into the Agreement.
+
+1.18     You are solely responsible for all access to and use of the Service and Account, including any breach of the Agreement. Your use of the Service and Account means you agree with the terms and conditions of the Agreement. If you do not agree with any of the foregoing, your sole and exclusive remedy is to notify us and immediately discontinue your use of the Service and Account.
+
+1.19     Not applicable to Residents of Québec: No sales representative, dealer, agent, officer or employee of All Telecom Korea has the authority to change or modify these Terms of Service, except pursuant to an official revised version of these Terms of Service, and you may not rely on any such change or modification.
+
+2.         Consequences of Agreement and Conditions of Use of the Service
+
+2.1       By accessing and using any Service, you agree to the terms and conditions contained in the Agreement and you further agree to comply with and use the Service in accordance with the Agreement and all applicable laws.
+
+2.2       By entering into the Agreement, you:
+
+Authorize All Telecom Korea to obtain information about your credit history and agree that All Telecom Korea may provide information to others about your credit experience with All Telecom Korea;
+Accept all provisions of the Agreement, including those set forth in the Governing Documents and these Terms of Service;
+Agree to cause all persons who use Services under your Account or with your authorization to comply with the Agreement;
+Acknowledge that the acts or omissions of all persons who use Services under your Account or with your authorization will be treated for all purposes as your acts or omissions;
+Acknowledge that you have received and had the opportunity to review a copy of the Agreement, including the Governing Documents and these Terms of Service;
+Confirm that the information you have provided to us is up-to-date and accurate; and
+Agree to notify us of any change in your information.
+2.3       You acknowledge that posting, transmitting or otherwise distributing information constituting or encouraging conduct that would constitute a criminal offence or give rise to civil liability while using a Service or your Account is strictly prohibited. Using a Service in a manner that is contrary to law or to our policies or would serve to restrict or inhibit any other user from using or enjoying any services that we provide or the Internet is also strictly prohibited. You also agree not to use any Service or any Equipment or Software provided in connection with a Service in a manner that contravenes restrictions lawfully and legitimately imposed on us by our Carriers. Harassment or abuse of any kind directed at our employees, contractors, agents or representatives is strictly prohibited.
+
+2.4       You shall not in any way resell, license or allow any third party to use the Service without receiving our prior written consent. You may not share or transfer your Services without our express written consent.
+
+2.5       We reserve the right to suspend or terminate your Services or any portion thereof without prior notice, where any of your Services is used in any manner that impairs the use of Service(s) by others, is inconsistent with the Agreement or is contrary to law, or during any period in which any amount payable by you to us is past due. We may move, remove or refuse to post any content, information or materials, in whole or in part, that we decide are unacceptable, undesirable or in violation of the Agreement.
+
+2.6       Without limiting our other rights and remedies under the Agreement and at law, we may, in our sole and unfettered discretion, terminate your subscription to a Service and/or your Account without notice, for any breach of the Agreement or any portion thereof by you, or anyone accessing or using a Service through you, your Equipment or Account.
+
+2.7       We may, in our sole discretion and without your consent, migrate your Services to other networks and platforms or change our suppliers, as and when it becomes necessary. Without limiting the generality of the foregoing, we may effect such a migration or change in suppliers in order to maintain, upgrade or enhance the performance of any Service and other deliverables provided to you hereunder, to ensure continuity of such Service and the integrity of our network, and/or to comply, as necessary, with manufacturers’ requirements. You expressly agree that any such migration or change does not constitute amendment or material change to the Agreement or to the Services.
+
+2.8       Until all Services under the Agreement have been cancelled or terminated as provided in the Agreement, all terms of the Agreement continue to apply.
+
+3.         Service Changes and Amendments to the Agreement
+
+3.1       Not applicable to Residents of Québec: Unless otherwise specified in the Agreement, we may change, at any time, any charges, features, content, structure or any other aspects of the Services, as well as any term or provision of the Agreement, upon notice to you. If you do not accept a change to the affected Services, your sole remedy is to terminate the affected Services provided under the Agreement, within 30 days of your receipt of our notice of change to the Services (unless we specify a different notice period), by providing us with advance notice of termination pursuant to Section 11.2. If you do not accept a change to these Terms of Service, your sole remedy is to retain the existing Terms of Service unchanged for the duration of the Contract Period (as defined in Section 8.12), upon notice to us within 30 days of your receipt of our notice of change in the Terms of Service.
+
+3.2       Applicable only to Residents of Québec: Unless otherwise specified in the Agreement, we may change, at any time, but upon no less than 30 days’ prior written notice to you, which will include any new provisions and/or the new and former wording of any amended provisions, as applicable, together with the date(s) that any such new and/or amended provisions come into force: a) with respect to a plan or Service not subscribed to for a Contract Period (as defined in Section 8.12), any charges, features, content, functionality, structure or any other aspects of the plan or Service, as well as any term or provision of the Agreement, and b) with respect to a plan or Service subscribed to for a Contract Period, any aspect of the plan or Service, as well as any term or provision of the Agreement, other than essential elements of the plan, Service or Agreement. If the change entails an increase in your obligations or a decrease in our obligations and if you do not accept such a change, you may terminate your Services without an ETF (as defined in Section 8.12) by sending us a notice to that effect no later than 30 days after the amendment takes effect.
+
+3.3       Notice to you of any changes to the Agreement or any material change to any Service to which you subscribe may be effected by sending you notice via email to the primary email account associated with your Account.
+
+4.         Risk Allocation and Responsibility for Use of Accounts
+
+4.1       The rates and fees charged by us reflect the allocation of risk herein and the limited recourse to us provided for in the Agreement. You agree to cause all persons who use any Service through your Account to observe and comply with the terms and conditions of the Agreement respecting such use. You further agree that you are solely responsible and liable for any and all breaches of the terms and conditions of the Agreement, whether such breach is the result of use of a Services by you or by any other user using your computer or Account, whether or not authorized by you. We will not assume any responsibility for your acts or omissions or of any individual who uses your Account.
+
+4.2       You are solely responsible for the placement of physical and procedural impediments to the inappropriate use of your Account, including password protection and are solely responsible for supervising any and all use of your Account. You agree to hold us, our affiliates, agents and suppliers, including without limitation our Affiliated Suppliers and Carriers, harmless from all liabilities and expenses related to any violation of the Agreement or laws by you or any user(s) of your Account, or in connection with your or their use of any Service(s).
+
+4.3       Please note that your messages and transmissions over the Internet may be the subject of unauthorized interception and review. A person with Internet access can cause damage, incur expenses, enter into contractual obligations and attract liability while on the Internet. You can incur many charges and may be exposed to liability on the Internet in connection with your use of Services. All such matters are your responsibility. We, our Affiliated Suppliers and our Carriers are not responsible for any charges or taxes (expressly including, without limitation, provincial or federal universal service charges, regulatory fees of any kind, federal excise or sales tax, or provincial sales tax), or liability you incur.
+
+5.         Service and Account Monitoring
+
+5.1       Privacy protection is a core All Telecom Korea value: under virtually no circumstances do we take steps to monitor your Services or Account beyond the network usage monitoring that is exposed to you in your My Account. We are a neutral, common-carrier-like intermediary, and we neither know, nor want to know, what you communicate using the Services: that’s between you and those you communicate with. However, there are two exceptions.
+
+First, it may be necessary to do so in order to manage and operate the Services, or to protect ourselves or others. This may arise in the context of network abuse. We treat any such information as personal information and treat its confidentiality very seriously.
+
+Second, from time to time, we could be legally obligated to monitor an account, by someone with the judicial or statutory authority to compel it. We test the degree to which we are so obligated vigorously, and unless specifically prohibited, will let you know about it as soon as possible.
+
+6.         Information Relating to the Services
+
+6.1       You hereby acknowledge that we and our affiliates may retain and use any information, comments or ideas conveyed by you relating to the Services (including any products and services made available on the Service). This information may be used to provide you with better service.
+
+6.2       We may send you Service related information on a regular basis via email addressed to the primary and other email addresses associated with your Account. You agree to review and to familiarize yourself with all such Service related information, and we are not liable for any damage or detriment to you or your property resulting from your failure to do so. Your continued use of any Service following delivery of any such Service related information means that you accept and agree to comply with such information, as applicable.
+
+7.         Minimum Equipment and Software Requirements, Pre-Installation Precautions and Installation Appointments
+
+7.1       Equipment shall be deemed to have been delivered in good working condition unless you give us notice to the contrary within 5 days of receiving the Equipment.
+
+7.2       Except for Equipment for which you have fully paid, all Equipment installed or provided by us remains our property and you agree that:
+
+You will take reasonable care with such Equipment;
+You may not sell, lease, mortgage, transfer, assign or encumber such Equipment;
+You may not reconfigure or re-locate such Equipment without our knowledge and permission; and
+You will return such Equipment to us at your own expense upon termination of the Services to which the Equipment related.
+If any Equipment belonging to us is lost, stolen or damaged or sold, leased, mortgaged, transferred, assigned, encumbered or not returned, you agree to pay us the undiscounted retail value of such Equipment, together with any costs incurred by us in seeking possession of such Equipment.
+
+7.3       You authorize us and our representatives to enter or have access to your premises as necessary at mutually agreed upon times to install, maintain, inspect, repair, remove, replace, investigate, protect, modify, upgrade or improve the operation of our services, the Equipment or our facilities or networks. If any of your Services or Accounts has been terminated, then you authorize us and our representatives to enter or have access to your premises to disconnect the Services, as applicable. If you live in a condominium, townhouse, apartment or other form of multiple dwelling or rental unit, it is your responsibility to obtain the required letter of authorization and arrange for access to the building utility room from the condominium board, landlord, or other authorized owner or governing body for the purposes of service installation and Your Service Provider will rely on you having obtained such authorization and access.
+
+7.4       Equipment and related Software may have to meet certain minimum requirements and be maintained in certain ways and in certain locations in order to access the Services or for the proper operation of the Services (e.g., 911 services). Such requirements may be changed from time to time at our sole discretion. Unless otherwise specified by us, you are solely responsible for updating or maintaining your Equipment and Software as necessary to meet such requirements, and you may not be entitled to customer support from us if you fail to do so. If you do not update your Equipment and Software as required, your Service may also cease to be accessible, in which case your sole and exclusive remedy is to stop using the Service and call us immediately at 1.866.622.4545.
+
+7.5       You must immediately notify us, at any of the points of contact specified below, if your Equipment is lost, stolen or destroyed. If you then wish to terminate your Services, your obligations under the Agreement, including the ETF (as defined in Section 8.12), will apply.
+
+7.6       We recommend that you backup all existing files by copying them to another storage medium prior to the installation of the Equipment and Software required for any Service. We cannot guarantee that your personal computer will or can be configured to work properly with the Software or Services, and we cannot assist you with any such configuration issues. We assume no liability whatsoever for any damage to or loss of any software, files, data, or for any personal computer or other computer system warranty infringements due to Equipment or Software installation related to the Service. We assume no liability whatsoever for any damages or losses associated with any installation that you choose to do.
+
+7.7       Unless otherwise specifically set out in the Agreement, to the maximum extent permitted by applicable law, neither All Telecom Korea nor its affiliates, subsidiaries, partners, licensors, dealers, representatives, suppliers and agents (and their respective employees, officers, directors, shareholders and representatives) (each of the foregoing individually “All Telecom Korea Party” and all of the foregoing collectively, “All Telecom Korea Parties”) will be liable to you or to any third party for any claims, damages, losses or expenses, including without limitation lost wages or missed work, in the event that an installation appointment for a Service is missed, either by us or by any third party installer.
+
+8.         Service Fees; Account and Payment Information; Notices to You
+
+8.1       Charges for a service will commence on the date that the Service is ordered (the “Order Date”). Unless otherwise agreed to by you and us, we will bill you monthly. Invoices will be delivered by email to the primary email address associated with your Account. All communication for the purpose of billing or legal notice may be made by email or by delivery to your domicile, which shall be deemed to be the last billing and/or service address(es) that you have provided to us.
+
+8.2       In the event we fail to bill you or underbill you for a charge, you will not be responsible for paying the previously unbilled or underbilled charge except where: (1) in the case of a recurring charge, you are correctly billed within a period of one year from the date the charge was incurred; or (2) in the case of a non-recurring charge, you are correctly billed within a period of 150 days from the date the charge was incurred. However, this time limitation does not apply if we have failed to bill you or underbilled you due to deception on your part.
+
+8.3       You are liable for all charges to your Account, including without limitation, installation fees, change fees, reinstatement fees, Equipment purchase and/or rental fees, Software licences, fees for the provision of Services, ETFs (as defined in Section 8.12) and administrative fees (collectively, “Service Fees”), and these are due and payable in full from the date of your invoice or statement.
+
+8.4       You agree to treat our telephone cards and all other access codes and passwords, where applicable, as confidential and non-transferable. We reserve the right to deactivate telephone card codes without notice if, in our sole discretion, fraudulent use is suspected. In the event that a telephone card is lost, stolen or used in an unauthorized manner, you will be responsible for notifying us by calling 1.866.622.4545. You acknowledge and agree that you shall be responsible for all costs incurred until such notification to us.
+
+8.5       In exceptional circumstances, for example, where you present an abnormal risk of loss to us, prior to the normal billing date we may require payment from you on an interim basis for the charges that have accrued. In such cases, the charges will be considered past due three (3) days after they are incurred or three (3) days after we demand payment, whichever occurs later.
+
+8.6       We may request immediate payment in extreme situations, provided we have notified you and the abnormal risk of loss has substantially increased since that notice was given or we, at our sole discretion, have reasonable grounds for believing that there exists an intention to defraud us.
+
+8.7       Where we provide the option to pay your Service Fees by credit card, debit card or by pre-authorized payment, and you designate one of these to us for payment, you hereby authorize us to charge that credit or debit card, or debit that financial institution account, every time we render you an invoice, for up to the full amount of the invoice.
+
+           For recurring credit card payments, when you subscribe you must provide us with a valid credit card number, and related required information we request. That lets us charge the credit card on a recurring basis.
+
+           For recurring bank account debits, if we make these available and you opt for them, then when you subscribe you must provide us with the particulars of the financial institution account to be debited: transit number, institution number, account number, and related required information. That lets us debit the financial institution account on a recurring basis. We may also need a completed Pre-Authorized Payment form that we provide to you.
+
+           It is your responsibility to ensure that the credit card or financial institution account information that you provide to us remains valid and current and that we are able to continue charging or debiting it to pay your bill. If you do not do this, or if your payments are in arrears, we may suspend or terminate your Services or Account without any further notice to you, triggering payment of the Early Termination Fees described in 8.12.
+
+8.8       If payment of an amount due on your Account is not received by us by the required payment date specified by us, it will be considered a delinquent amount and will be subject to a late payment charge of 2% per month, calculated and compounded monthly on the delinquent amount (26.82% per year) from the date of the first invoice on which the delinquent amount appears until the date we receive such amount in full. You agree that we can charge any unpaid and outstanding amount, including any late payment charges, on your Account to your credit card, bank account or any other payment method pre-authorized by you for payment of our charges.
+
+8.9       Not applicable to Residents of Québec: Administrative charges may be levied for administration or account processing activities in connection with your Account, including as a result of the following:
+
+Collection efforts due to non-payment or having a balance over your credit limit, including unbilled usage and pending charges, fees and adjustments;
+Returned or rejected payments;
+Change of any identifier (e.g., phone number); and
+The restoral of Service.
+A list of such charges, as amended from time-to-time, is available on request, and is incorporated into these Terms of Service by reference.
+
+8.10     Applicable only to Residents of Québec: Administrative charges may be levied for administration or account processing activities in connection with your Account, including as a result of the change of any identifier (e.g., phone number). A list of such charges, as amended from time to time, is available on request, and is incorporated into these Terms by reference.
+
+8.11     Any questions or discrepancies regarding Service Fees must be reported to us within 90 days of the date of our invoice or other statement. Failure to notify us within this time period will constitute your acceptance of such Service Fees.
+
+8.12     Unless otherwise set out in the Governing Documents, if you agree to subscribe to one of our plans or Services for a committed period of time (the “Contract Period”), you may be subject to an early termination fee (“ETF”) for each Service. Any decrease in your Contract Period may be subject to a fee. If your Service is terminated prior to the end of the Contract Period, you will pay us an ETF as specified in the Agreement, plus taxes.
+
+8.13     Changes to your Account (e.g., price plan, features or identifiers) may not take effect until after your next billing date.
+
+8.14     All Equipment installed or provided by us, except Equipment purchased outright by you, remains our property and you agree to return such Equipment to us promptly when you no longer subscribe to the Service(s) in respect of which the Equipment was provided to you or when the Agreement is terminated. While in your possession, our provided Equipment may be charged to you as part of your Service Fees. We may require you to pay an Equipment deposit prior to providing you with Equipment. You agree to pay us the cost of any Equipment not returned to us upon disconnection or loss, together with any costs incurred by us in seeking to obtain possession of such Equipment. We may charge you all costs relating to repair or replacement of damaged Equipment.
+
+8.15     Subject to our cancellation and termination policy set out below, fees and charges for partial months of Service use will not be prorated.
+
+8.16     The use of certain Services may require you to use other telecommunications services and incur corresponding additional charges. Without limitation, one such example is the use of long distance to access dialup Internet Service when it cannot be accessed from your local calling area. Another example is a one-time installation and monthly recurring fee for the use of local loops used to provide Internet Service over DSL, where the carrier that leases the local loop to us is not providing voice telephone services over it as well. In such cases, you are solely responsible for the payment of all charges associated with your use of such other telecommunications services, whether you obtain such other services from us or other suppliers.
+
+9.         Deposits and Credit Requirements
+
+9.1       Not applicable to Residents of Québec: We may require a deposit or impose other payment or credit requirements (e.g., interim payments; mandatory pre-payments) at any time and on such terms as determined in our sole discretion. You will not earn any interest on any deposits or other payments held by us. If your Service is terminated, we will apply any deposits or other payments against the outstanding final balance on your Account.
+
+9.2       Applicable only to Residents of Québec: We may require a deposit or impose other payment or credit requirements (e.g., interim payments; mandatory pre-payments) at any time and on such terms as determined in our sole discretion. Any security deposit held by us will bear interest at the rate determined by regulation, as determined from time to time, from the date we collect a security deposit or from June 30, 2010, if a security deposit is already being held by us at that date, until the date we return it to you. We will notify you in writing upon using all or part of a security deposit. If your Service is terminated, we will return any security deposits with applicable interest minus the outstanding final balance on your Account within 30 days of termination of your Services
+
+9.3.      Upon notice to you, we may assign, change or remove a credit limit on your Account at any time. Service may be suspended, at any time, to any and all of your Accounts, if your balance, including unbilled usage and pending charges, fees and adjustments, exceeds this limit. Recurring service charges continue to apply during any suspension of Services.
+
+10.       Availability and Installation of Service
+
+10.1     Each Service is available only in those areas to which the network of All Telecom Korea and the networks of Carriers employed by All Telecom Korea to provide the Service extend and where the Service has actually been rolled out by us. Service availability is also subject to the availability of appropriate facilities and is dependent on the availability of suitable technology at the location(s) at which you wish to obtain the Service.
+
+10.2     The availability of high-speed Internet Service is dependent on the availability of suitable residential telephone lines/local loops and/or cable facilities supplied by other Carriers. The number of service connections per address may be limited. You acknowledge and agree that we shall conduct a preliminary geographical check upon your placing an order to determine if high-speed Internet Service is available in your geographical area. Due to the nature of high-speed Internet Service technology, we reserve the right to deem the high-speed Internet Service unavailable to you up to, including, and after the installation. Where a high-speed Internet service having certain characteristics is required in order for us to be able to provide another Service (“Internet Dependent Service”), and the require Internet service is not available, we will be unable to provide the Internet Dependent Service, unless and until you make arrangements to obtain the required high-speed Internet service.
+
+10.3     In order to obtain Service and depending on the nature of the Service, you may have to purchase or lease certain additional Equipment and obtain additional services from one or more other providers of telecommunications services. As noted above, leased Equipment remains our property at all times. You are responsible for all such Equipment and it must be returned to us upon termination of the Service or part of the Service for which it was leased. Self-installation of Equipment is not allowed for certain Services. For those Services for which it is allowed, if you choose to install such Equipment yourself, the type of Equipment to be installed must be pre-approved by us and your installation configuration must conform to applicable specifications. We assume no liability for any damage or losses caused if you choose to self-install.
+
+10.4     Should your Services include a requirement for local number portability or equal access, your entry into the Agreement also authorizes us, directly or through our underlying Carriers, to port the requested telephone number(s) from your existing local and/or long distance service provider(s), onto our local and/or long distance network.
+
+10.5     Internet Service includes the ability to establish multiple email accounts. Email accounts may be established for other members of your household, and all such accounts shall form part of your Account and be subject to the Agreement. Email accounts created for users who are under the age of majority may be established only with the consent of those persons’ parents or guardians. Email accounts are terminated upon termination of your Internet Service or Account. We may also, at any time, suspend or delete an Internet Service or email account where the email account or any one of your Services is used in any manner that impairs the use of Service(s) by others, is inconsistent with the Agreement or is contrary to law, or during any period in which any amount payable by you to us is past due. During a period when an email account is suspended: (1) you may not access your email to view copies of emails sent to you prior to the suspension; (2) you may not send emails from the suspended account; (3) emails directed to that account are still received; and (4) you may call our help desk to reactivate the email account fully at 1.866.622.4545 after meeting any applicable conditions. When an email account is deleted, all emails in the account prior to deletion will also be deleted and will not be recoverable.
+
+10.6     As a condition of continued use of any Service, we may require you: (1) to download and install upgrades, patches or more recent versions of any component(s) of any applicable Software; and (2) to verify the accuracy of your registration and billing information.
+
+11.       Term, Termination and Suspension
+
+11.1     The term of the Agreement, and any applicable Contract Period, starts on the Order Date and shall continue indefinitely until terminated in accordance with the provisions of the Agreement or applicable law.
+
+11.2     Not applicable to Residents of Québec: Unless otherwise permitted by applicable law:
+
+You may terminate any or all of your Services at any time by sending us a written, dated notice or by contacting All Telecom Korea at the appropriate points of contact specified in these Terms of Service; and
+All Telecom Korea may terminate any or all of your Services or Accounts upon no less than 30 days’ advance notice to you at your billing address.
+Most All Telecom Korea Services are prepaid services: no new prepaid period will be charged after your cancellation. But bandwidth use on capped Internet plans, and long-distance charges on some voice plans, are postpaid services, because they are usage-sensitive. Applicable charges continue to apply until you can no longer access the Service. The transfer of your telephone number to another telecommunications service provider constitutes a termination of the applicable Service(s).
+11.3     Applicable only to Residents of Québec: The following provisions apply with respect to termination:
+
+You may terminate any or all of your Services at any time by sending us a written, dated notice or by contacting All Telecom Korea at the appropriate points of contact specified in these Terms of Service; and
+All Telecom Korea may terminate any or all of your Services or Accounts upon no less than 60 days’ advance notice to you at your billing address, unless you are in default of your obligations pursuant to the Agreement, including one of the events of default described in Section 11.4 below. If you have subscribed to a plan or Service for a Contract Period, then we may terminate your Services only if you are in default of your obligations hereunder, pursuant to Sections 1604, 2126 and 2129 of the Civil Code of Québec.
+Most All Telecom Korea Services are prepaid services: no new prepaid period will be charged after your cancellation. But bandwidth use on capped Internet plans, and long-distance charges on some voice plans, are postpaid services, because they are usage-sensitive. Applicable charges continue to apply until you can no longer access the Service. The transfer of your telephone number to another telecommunications service provider constitutes a termination of the applicable Service(s).
+11.4     In addition to our rights to terminate your Services pursuant to Sections 11.2 and 11.3, we may restrict, block, suspend or terminate any or all of your Services or Accounts, including 911 service, or identifiers in any way, without notice or liability to you, if:
+
+You are in breach of the Agreement, including non-payment of your charges or non-compliance with any Policies;
+You do not maintain Service usage within the prescribed credit limit;
+You exceed reasonable usage limits, as determined by us;
+You have given us false, misleading or out-dated information;
+We reasonably suspect or determine that any of your Accounts, identifiers, Services or Equipment is the subject of fraudulent, unlawful or improper usage or usage that adversely affects our operations or the use of our services, facilities or networks by others;
+You harass, threaten or abuse us or our employees or agents;
+You fraudulently or improperly seek to avoid payment to us;
+We need to install, maintain, inspect, test, repair, remove, replace, investigate, protect, modify, upgrade or improve the operation of the Services, the Equipment or our facilities or networks;
+Any account or service on which your Services depend is terminated for any reason; or
+We reasonably believe that there is an emergency or extreme circumstance that would warrant such action.
+11.5     If we restrict, suspend, block or terminate your Services or Accounts:
+
+You must pay any amounts owing;
+
+We may also suspend, block or terminate, without notice or liability, your services under any other agreement or account that you may have with us or a related All Telecom Korea entity (including accounts that may be in good standing);
+You may be charged for any costs incurred by us or any related All Telecom Korea entity in connection with your breach of these Terms of Service, including costs incurred to enforce your compliance;
+Your access to emergency or special needs services (e.g., 911) may also be restricted, suspended, blocked or terminated; and
+Your rates for services with related All Telecom Korea entities may change in accordance with the terms of those services.
+12.       Performance Levels of Services
+
+12.1     There are certain limitations to the Services.
+
+12.2     In the case of dialup Internet Service, connections may not be established on every attempt and it may be necessary to dial the Internet Service access numbers repeatedly to establish a connection to the Internet.
+
+12.3     In the case of Internet Service generally, speed is a function of many technical factors, some of which are not under our control. As such, we do not guarantee the maximum Service performance (i.e., throughput or speed) levels. You understand and agree that any content that you may access through the Internet Service may be subject to “caching” at intermediate locations on the Internet. Similarly, simultaneous use of high bandwidth applications (example, streaming media) by one or more (example, home networking) users may result in an experience that is slower when compared to a single application used by a single user.
+
+12.4     In the case of Internet Service, we or our underlying Carriers may impose caps on bandwidth usage and hence such usage capacity is not unlimited in those cases. We and those Carriers are entitled to enforce those bandwidth caps. If you refuse to adhere to the caps, your Internet Service may be suspended, restricted, subjected to traffic shaping or terminated, and/or extra charges may apply.
+
+12.5     Any voice over IP service may not in all instances perform with the same degree of reliability or quality as equivalent traditional wireline telephone services.
+
+12.6     You acknowledge and understand that the Services or access to the Services, including 911, public alerts or special needs services, may not function correctly, or at all, in the following circumstances:
+
+If your Equipment fails, is not configured correctly or does not meet our requirements;
+In the event of a high-speed Internet service outage, regardless of the supplier providing the high-speed Internet service to you;
+In the event of a network outage or power failure;
+If you tamper with or, in some cases, move the Equipment; or
+Following suspension or termination of your Services or Account.
+12.7     No All Telecom Korea Party is responsible or liable to you for any software, content or services provided to you or accessible by you through the Services, any charges incurred in connection with such software, content or services or anything that is or can be done with such software, content or services even if you are billed for such software, content or services. All such software, content or services is accessed or transmitted solely at your own risk.
+
+12.8     You are responsible for the use and compatibility of the Services with any Equipment, Software, services and/or other materials not provided by us (hereinafter called the “Third Party Equipment and Services”). We disclaim all responsibility for determining compatibility between any Service and any Third Party Equipment and Services.
+
+12.9 Not applicable to Residents of Québec: To the maximum extent permitted by applicable law:
+
+The All Telecom Korea Parties do not guarantee or warrant the performance, availability, coverage, uninterrupted use, security, pricing or operation of the Services, the Equipment or any products, content, applications, services, facilities, connections or networks used or provided by us or third parties (collectively, the “Offering”);
+You bear the entire risk as to the use, availability, reliability, timeliness, quality, security and performance of the Offering; and
+The All Telecom Korea Parties do not make any express or implied representations, warranties or conditions, including warranties of title or non-infringement, or implied warranties of merchantable quality or fitness for a particular purpose, with regard to the Offering.
+All representations, warranties and conditions of any kind, express or implied, are excluded to the maximum extent permitted by applicable law. To the maximum extent permitted by applicable law, no advice or information, whether oral or written, obtained by you from the All Telecom Korea Parties creates any term, condition, representation or warranty not expressly stated in the Agreement.
+You are solely responsible for the following matters:
+Any access to the Equipment;
+Maintaining the security and privacy of your property and your transmissions using the Services, the Equipment or our facilities or networks; and
+Protecting against any breaches of security or privacy or other risks involved in installing, using, maintaining or changing the Services or the Equipment.
+12.10   Applicable only to Residents of Québec: To the maximum extent permitted by law:
+
+The All Telecom Korea Parties do not guarantee or warrant the performance, availability, coverage, uninterrupted use, security, pricing or operation of the Services or any products, content, applications, services, facilities, connections or networks used or provided by us or third parties (collectively, the “Offering”)
+You bear the entire risk as to the use, availability, reliability, timeliness, quality, security and performance of the Offering; and
+The All Telecom Korea Parties do not make any express or implied representations, warranties or conditions, including warranties of title or non-infringement, or implied warranties of merchantable quality or fitness for a particular purpose, with regard to the Offering.
+You are solely responsible for the following matters:
+Any access to the Equipment;
+Maintaining the security and privacy of your property and your transmissions using the Services, the Equipment or our facilities or networks; and
+Protecting against any breaches of security or privacy or other risks involved in installing, using, maintaining or changing the Services or the Equipment.
+13.       Limitations of Liability
+
+13.1     Not applicable to Residents of Québec: Unless otherwise specifically set out in the Agreement, to the maximum extent permitted by applicable law, the All Telecom Korea Parties will not be liable to you or to any third party for:
+
+Any direct, indirect, special, consequential, incidental, economic or punitive damages (including loss of profit or revenue, financial loss, loss of business opportunities, loss, destruction or alteration of data, files or software, breach of privacy or security property damage, personal injury, death or any other foreseeable or unforeseeable loss, however caused) resulting or relating directly or indirectly from or relating to the Offering or any advertisements, promotions or statements relating to any of the foregoing, even if we were negligent or were advised of the possibility of such damages;
+The performance, availability, reliability, timeliness, quality, coverage, uninterrupted use, security, pricing or operation of the Offering;
+Any error, inclusion or omission with respect to any telephone listings or directories;
+The denial, restriction, blocking, disruption or inaccessibility of any Services, including 911, public alerts or special needs services, Equipment or identifiers (including telephone numbers);
+Any lost, stolen, damaged or expired Equipment, identifiers, passwords, codes, benefits, discounts, rebates or credits;
+Any error, omission or delay in connection with the transfer of telephone numbers to or from another telecommunications service provider or any limitation connected thereto;
+Any acts or omissions of a telecommunications carrier whose facilities are used to establish connections to points that we do not serve; or
+Any claims or damages resulting directly or indirectly from any claim that the use, intended use or combination of the Offering or any material transmitted through the Services infringes the intellectual property, industrial, contractual, privacy or other rights of a third party.
+These limits are in addition to any other limits on the All Telecom Korea Parties’ liability set out elsewhere in the Agreement and apply to any act or omission of the All Telecom Korea  Parties, whether or not the act or omission would otherwise be a cause of action in contract, tort or pursuant to any statute or other doctrine of law.
+
+13.2     Applicable only to Residents of Québec: Unless otherwise specifically set out in the Agreement, and except for damages resulting from a All Telecom Korea Party’s own act, the All Telecom Korea Parties will not be liable to you or to any third party for:
+
+Any damages (including loss of profit or revenue, financial loss, loss of business opportunities, loss, destruction or alteration of data, files or software, breach of privacy or security or property damage) resulting or relating directly or indirectly from or relating to the Offering;
+The performance, availability, reliability, timeliness, quality, coverage, uninterrupted use, security, pricing or operation of the Offering;
+Any error, inclusion or omission with respect to any telephone listings or directories;
+The denial, restriction, blocking, disruption or inaccessibility of any Services, including 911, public alerts or special needs services, Equipment or identifiers (including telephone numbers);
+Any lost, stolen, damaged or expired Equipment, identifiers, passwords, codes, benefits, discounts, rebates or credits;
+Any error, omission or delay in connection with the transfer of telephone numbers to or from another telecommunications service provider or any limitation connected thereto;
+Any acts or omissions of a telecommunications carrier whose facilities are used to establish connections to points that we do not serve; or
+Any claims or damages resulting directly or indirectly from any claim that the use, intended use or combination of the Offering or any material transmitted through the Services infringes the intellectual property, industrial, contractual, privacy or other rights of a third party.
+13.3     The All Telecom Korea Parties’ collective liability for negligence, breach of contract, tort or other causes of action, including fundamental breach, to the extent permitted by applicable law, is limited to payment, upon request, for actual and direct damages of a maximum amount of $20 or an amount equal to the Service Fees payable during any service outage, whichever is greater. Other than this payment and to the extent permitted by applicable law, neither the All Telecom Korea Parties nor their Affiliated Partners, including Carriers, shall be liable under any circumstances to you or any third party for any damages, including direct, indirect, special, consequential, incidental, economic, exemplary or punitive damages including loss of data, loss of income, loss of profit or failure to realize expected savings arising directly or indirectly from All Telecom Korea Parties’ (or their Affiliated Partners’, including Carriers’) negligence or breach of contract (including fundamental breach or otherwise).
+
+13.4     This Article 13 of the Agreement shall apply even if there is a breach of condition, a breach of an essential or fundamental term, or a fundamental breach of the Agreement.
+
+13.5     You agree that the limitations of liability set out in this Article 13 are fair and reasonable in the commercial circumstances of the Agreement and that we would not have entered into the Agreement but for your agreement to limit our liability in the manner and to the extent provided in this Article 13.
+
+14.       Indemnification
+
+14.1     You will indemnify and hold harmless the All Telecom Korea Parties from and against any claims, losses, damages, costs and expenses (including, without limitation, reasonable legal fees and other litigation expenses) incurred by the All Telecom Korea Parties relating to your violation, alleged violation or misappropriation of any intellectual property, industrial, contractual, privacy or other rights of a third party or any alleged libel or slander by a third party against you.
+
+14.2     You will indemnify and hold harmless the All Telecom Korea Parties from and against any claims, losses, damages, costs and expenses (including, without limitation, reasonable legal fees and other litigation expenses) incurred by the All Telecom Korea Parties relating to the violation of the Agreement by you or any user of your Account, or in connection with your or their use of the Services.
+
+15.       This section left intentionally blank
+
+16.       Security, Privacy and Confidentiality
+
+16.1     We are not responsible for corrupted files or “viruses”, “cancelbots”, “trojan horses”, “worms”, or other harmful components (“Virus(es)”) which affect you or your Services. It is your responsibility to secure and safeguard your systems through appropriate means (like software available for this purpose) from theft, unauthorized use, or system corruption. If your failure to secure and safeguard your systems causes detriment to our network or to a network we make use of, including our underlying Carriers’, we may immediately cancel your Services.
+
+16.2     We cannot ensure or guarantee the privacy of information you choose to transmit through the Service. Any such use is at your sole risk, and the All Telecom Korea Parties are relieved from all liability in connection with it. If you do not do so already, consider encrypting your connection through use of a third-party Virtual Private Network.
+
+16.3     Advise us immediately of any security breach, such as compromise of your Account information: Account numbers and passwords, email account passwords, hosted webpage account passwords, and so on. Contact technical support at 1.866.622.4545 so we can change your password and create replacement information.
+
+16.4     We protect your personal information consistent with the All Telecom Korea Privacy Policy, available here. By subscribing to the Service, you consent to the collection, use and disclosure of your personal information to the extent described in the above policy. To access or learn more about your personal information held by All Telecom Korea, to make a privacy-related complaint, or to obtain a printed copy of our Privacy Policy, contact our privacy team: privacy@alltelecomkorea.com or Privacy, All Telecom Korea Inc., 78 Martin Ross Avenue, North York, Ontario, M3J 2L4.
+
+16.5     Wherever possible, we seek to site elements of our service that process personal information within Canada, and by Canadian-owned and –controlled companies, in order to avoid its international export. However, certain personal information collected in providing the Services is stored and processed outside Canada, and may be subject to the laws of other jurisdictions. These include service providers acting on our behalf, such as, but not limited to, certain customer management software we use (Zoho).
+
+16.6     We understand “personal information” broadly: customer name & address, payment information, and account activity like volume of data transferred, to be sure; but also identifiers like IP addresses, MAC addresses, and anything else that, when added to what many third parties already know, could identify you personally. Unless you provide express consent, or disclosure is required pursuant to a legal power, your personal information is confidential and may not be disclosed by us to anyone other than:
+
+You;
+
+A person who, in our reasonable judgment, is seeking the information as your agent;
+
+Another telephone company, provided the information is required for the efficient and cost-effective provision of telephone service and disclosure is made on a confidential basis, with the information to be used only for that purpose;
+A company involved in supplying you with telephone or telephone directory related services, provided the information is required for that purpose and disclosure is made on a confidential basis, with the information to be used only for that purpose;
+An agent we have retained in the collection of your account, to evaluate your creditworthiness, or to perform related administrative functions for us, provided the information is required for and used only for that purpose; or
+A public authority or agent of a public authority if, in our reasonable judgment, the circumstances in which a court order would have been obtained were present, but the exigent circumstances of an imminent danger to life or property that could be avoided, or minimized by disclosure of the information, prevented the seeking of such an order.
+Express consent to disclosure may be obtained by written consent, electronic confirmation via the Internet, oral consent where an audio recording of the consent is retained by us, or other methods, as long as you or an independent third party creates an objective, documented record of your consent.
+
+17.       Additional Terms Relating to Internet Service
+
+17.1     You acknowledge and understand that when using home networking, there are certain inherent risks (e.g., other users may gain access to your system or your Services and Accounts). All Telecom Korea shall not be liable for any claims or damages relating to home networking, even if the home networking application or service is provided, installed, maintained or supported by All Telecom Korea.
+
+17.2.       To ensure that shared Internet resources are managed in a way that provides the best Internet experience for the most users, All Telecom Korea takes measures so that, during congested periods during the download day (8 a.m. to 2 a.m.): less-real-time classes of traffic do not impair the use of real-time applications; and users who have used the highest proportion of shared Internet resources that day are the first to be affected by these measures. For more details about traffic management applied to All Telecom Korea’s Internet access services, including measures taken by All Telecom Korea and All Telecom Korea’s underlying service providers, please refer to All Telecom Korea’s Shared Internet Resources Policy, at http://alltelecomkorea.com/legal/itmp.
+
+18.       This section left intentionally blank.
+
+19.       This section left intentionally blank.
+
+20.       This section left intentionally blank.
+
+21.       Change in Telephone or Cable Service
+
+21.1     If a change in your local telephone service is requested from your local phone company or a change in your cable service is requested from your cable company, it is your sole responsibility to advise us of the changes as this could affect the Services you obtain from us. This notification includes moves, regardless of whether your phone number changes or not, changes to your phone number, and any other changes that may occur to your local telephone or cable service. Any applicable cancellation and/or re-installation charges relating to your Services will be charged to your Account.
+
+21.2     Whenever a Service must be moved, unless a self-install option for the Service is permitted by us, you must schedule an appointment for us to move any Equipment required in connection with the Service to be moved, other than items, such as, without limitation, your computer system, for which you are solely responsible.
+
+22.       Intellectual Property
+
+22.1     All trademarks, copyright, brand concepts, names, logos and designs used by us are intellectual property assets, registered or otherwise, of, or used under license by, All Telecom Korea Inc. or of one of its affiliates or subsidiaries. All are recognized as valuable assets of their respective owners, and may not be displayed or used by you in any manner for commercial purposes or copied in any manner for any purpose without the express prior written permission of the All Telecom Korea entity that owns it.
+
+23.       Customer Support
+
+23.1     Support is available in a variety of ways:
+
+Free email support is available at: support@alltelecomkorea.com;
+Telephone support for technical issues is available at 1.866.622.4545. The hours of operation for technical support are set out here as updated from time to time.
+Telephone support for account/billing issues is available at 1.866.622.4545. The hours of operation for account/billing support are set out here as updated from time to time.
+23.2     Questions and problems arising from the installation, operation and use of software and hardware, other than in relation to the basic connectivity to the Services through supported software on systems meeting the minimum system requirements, are outside the scope of our technical support and any such out-of-scope support will be provided only in our sole discretion. From time to time, we may refer you to third parties and third party websites, including without limitation for training, support, maintenance, hardware and software. You understand and agree that all such references are provided as a courtesy only, are without guarantee, are used at your sole risk, and that we shall not be liable for, and hereby disclaim all liability for, such referrals to third parties and their websites, products and services and any damages arising therefrom. Remote technical support is by its nature imprecise. Therefore, you also understand and agree that we shall not be liable for and hereby disclaim any liability for any advice or instructions provided or not provided when you contact our technical support.
+
+24.       Disputes
+
+24.1     If you have a dispute about Service, Software, Equipment, about this Agreement, or about what we say outside this Agreement, then we want to resolve the dispute quickly and fairly, and will work with you in good faith to do so. Escalate the dispute outside All Telecom Korea only if you have tried to work with us, but are unsatisfied with the resolution.
+
+24.2     If you are a consumer or small business with a monthly bill under $2500, then escalate externally with the Commissioner for Complaints for Telecommunications Service (www.ccts-cprst.ca, 1-888-221-1687). It is the telecommunications consumer agency designated by the CRTC to resolve consumer and small business disputes about telecommunications services.
+
+24.3     Otherwise, the dispute will be determined by single-arbitrator arbitration. Arbitration is much faster than lawsuits, which can last for years. To that end, you agree to opt out of, and to waive any right to start or participate in, a class action related to a dispute. To begin arbitration, send notice of your dispute to the address in Article 25.
+
+25.       Contact Information
+
+25.1     If you have any questions regarding us or the terms and conditions of the Agreement, the Services, or you need to contact us for any other reason, you may do so by one of the following means:
+
+Email: info@alltelecomkorea.com;
+Telephone: 1.877.622.4545;
+Fax: 1.416.588.6550
+By writing to: All Telecom Korea Inc., Attention: Customer Service, 78 Martin Ross Avenue, North York, Ontario M3J 2L4.
+25.2     Any notice of a claim must be given to the All Telecom Korea Inc., Attention: Legal Department, 78 Martin Ross Avenue, North York, Ontario M3J 2L4.
+
+25.3     Any notice shall be deemed to have been given on the date on which it was sent by the party giving the notice.
+
+26.       Changes in Regulation
+
+26.1     You and we understand that the Canadian Radio-television and Telecommunications Commission, or other regulators, government departments or agencies may impose regulations on IP-based or other services. If new regulations are imposed on us, we are authorized to make changes to the Agreement and any other Governing Documents to reflect the new regulations, and we will post such changes on our website, here. We retain the right to pass on to you any new regulatory fees or taxes that may be imposed by law or regulation.
+
+27.       Jurisdiction
+
+27.1     The Agreement is governed exclusively by and construed in accordance with the laws of the province or territory in which your billing address is located, but if your billing address is outside of Canada, the Agreement is governed exclusively by the laws of the province of Ontario and you submit to the jurisdiction of the courts of Ontario. Please note that your rights and remedies may vary by province or territory.
+
+28.       Miscellaneous
+
+28.1     The Agreement, as amended from time to time, constitutes the entire agreement and understanding between you and All Telecom Korea for the Services and supersedes all prior agreements written or oral, with respect to the same subject matter.
+
+28.2     Neither the course of conduct between us nor trade practice modifies any provision of the Agreement.
+
+28.3     If any provision in the Agreement is declared to be invalid or in conflict with any such law or regulation, that provision may be deleted or modified without affecting the validity of the other provisions.
+
+28.4     Our failure to enforce strict performance of any provision of the Agreement shall not be construed as a waiver of any provision or right.
+
+28.5     We may assign our rights and obligations under the Agreement without your consent. You may not assign or transfer the Agreement without our prior consent.
+
+28.6     In no event shall we be liable for any failure to comply with the Agreement if such failure results from any condition or event beyond our reasonable control, including, but not limited to, computer hacking, security breach, fire, flood, earthquake, any elements of nature or acts of God, theft, riot, strike or other labour disturbance, power failure, war or terrorism.
+
+28.7     The provisions of those Sections of the Terms of Service that are by their nature intended to survive termination of the Agreement, shall survive such termination. For example, and without limitation, the provisions of the Terms of Service relating to our rights to collect amounts owing at the time of Termination of the Agreement, your obligation to return Software and Equipment belonging to us upon termination of the Agreement, timeframe applicable to claims and adjustments for incorrect billing, no warranties, limitations of liability (including without limitation all such bolded provisions throughout the Terms of Service), indemnities (including without limitation all such bolded provisions throughout the Terms of Service), privacy and confidentiality, termination and consequences of termination of the Agreement, dispute resolution, intellectual property, entire agreement, severability, waiver, no modification of Agreement through course of conduct, enurement, assignment and restrictions thereon, survival, language, governing law, provisions relating to the limitations of 911 service  and limitations of liability for 911 service, and definitions and provisions relating to the interpretation of the Terms of Service relevant to any of the other provisions that survive the termination of the Agreement.
+
+28.8     The Agreement enures to the benefit of and is binding on you, your heirs and your legal personal representatives and on All Telecom Korea’s respective successors and assigns.
+
+28.9     The parties have required that the Agreement and all documents relating thereto to be drawn up in English. Les parties ont demandé que cette convention ainsi que tous les documents qui s’y rattachent soient rédigés en anglais.
+</p>
+</div>
+
+<button style="width: 70px; margin-left: 400px;" type="submit" class="btn btn-primary " data-dismiss="modal" href="/login">Close</button><span>&nbsp;&nbsp;</span>
+ 
+    </div>
+    
+  </div>
+</div>
+
+
+
+
+
+<div>
+  <div class="Register">
+  <div>
+  <form #RegForm="ngForm" (ngSubmit)="registerForm()">
+    
+       <br>
+      <div class="Register-form">
+        <h1>Register Here</h1>
+        <small class="text-danger">{{msg}}</small>
+        <p>Please fill in this form to create an account.</p>
+        
+        <div >
+          <div class="validate" *ngIf="(name.invalid && name.touched) || name.dirty">
+            <small *ngIf="name.errors?.required" class="text-danger">User name is required</small>
+            </div>
+        <input type="text" placeholder="Enter User Name *" name="fname" id="fname" required [(ngModel)]="cust.userName"  #name="ngModel"
+        [class.is-invalid]="(name.invalid && name.touched) || name.dirty"
+        >
+
+
+        <div class="validate" *ngIf="(email.invalid && email.touched) || email.dirty">
+          <small *ngIf="email.errors?.required" class="text-danger">Email is required</small>
+          <small *ngIf="email.errors?.pattern" class="text-danger">Please provide a valid email address</small>
+          </div>
+        <input type="email" placeholder="Enter Email *" name="email" id="email" required pattern="^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" ngModel="pwd" [(ngModel)]="cust.emailId"  #email="ngModel"
+        [class.is-invalid]="(email.invalid && email.touched) || email.dirty"
+        >
+          
+
+        <div class="validate" *ngIf="(ph.invalid && ph.touched) || ph.dirty">
+          <small *ngIf="ph.errors?.required" class="text-danger">Contact Number is required</small>
+          </div>
+        <input type="text" placeholder="Enter Contact number *" name="ph" id="ph" required  [(ngModel)]="cust.phoneNum" #ph="ngModel" 
+        [class.is-invalid]="(ph.invalid && ph.touched) || ph.dirty"
+        >
+          
+
+        <div class="validate" *ngIf="(pwd.invalid && pwd.touched) || pwd.dirty">
+          <small *ngIf="pwd.errors?.required" class="text-danger">Password is required</small>
+          <small *ngIf="pwd.errors?.pattern" class="text-danger">Password must contains minimum 8 character, one uppercase, one lowercase and a special symbol.</small>
+           </div>
+        <input type="password" (input)="OnInput($event)" placeholder="Enter Password *" name="psw" id="psw" required pattern="(?=^.{8,}$)((?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$"  ngModel [(ngModel)]="cust.password" #pwd="ngModel" #password
+        [class.is-invalid]="(pwd.invalid && pwd.touched) || pwd.dirty"
+        >
+        <div class="validate" *ngIf="(rpwd.invalid && rpwd.touched) || rpwd.dirty">
+          <small *ngIf="rpwd.errors?.required" class="text-danger">Confirm Password is required</small>
+          <small class="error-msg" *ngIf="iscorrect()" class="text-danger">Passwords must match with Confirm Password.</small>
+           </div>
+        <input type="password" (input)="OnInput1($event)" placeholder="Confirm Password *" name="psw-repeat" id="psw-repeat" required   ngModel  #rpwd="ngModel"  #rpwd
+        [class.is-invalid]="(rpwd.invalid && rpwd.touched) || rpwd.dirty"
+        >
+        
+          
+           
+        
+        
+        <input type="checkbox" name="agree-term" id="agree-term" class="agree-term" required ngModel #check="ngModel"
+        [class.is-invalid]="(check.invalid && check.touched) || check.dirty"
+        >
+        <div class="validate" *ngIf="(check.invalid && check.touched) || check.dirty">
+          <small *ngIf="check.errors?.required" class="text-danger">Agree the terms and conditions</small>
+       </div>
+        <p class="label-agree-term"><span>&nbsp; &nbsp;</span>By creating an account you agree to our  <a href="#" class="term-service" data-toggle="modal" data-target="#modalLoginForm">Terms and Conditions</a></p>
+          
+
+      </div>
+      <button [disabled]="RegForm.form.invalid" type="submit"  class="btn btn-success" name="submit" id="submit">Submit</button><br><br>
+      <div class="container signin">
+        <p>Already have an account? <a href="/login">Log in</a>.</p>
+      </div></div> <br> <br>
+    </form>
+  </div></div>
+  <div class="footer-copyright text-center py-3">© 2020 Copyright:
+    <a href="#">VoiceFonica.com</a>
+  </div>

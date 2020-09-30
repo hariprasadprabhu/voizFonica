@@ -1,0 +1,57 @@
+<app-headernav-postpaid></app-headernav-postpaid>
+<section class="register">
+    <br>
+    <div style="font-size: 20pt;background-color: rgb(248, 232, 232);" class="container container1">
+      <div *ngIf="colrtime=='paid'" style="padding: 3%;">
+        Hi.. {{name}}<br><br>
+        Bill status : <span style="background-color: rgb(120, 199, 120);border-radius: 20%;">PAID</span><br><br>
+        <p style="font-size: 15pt;">Enjoy your service</p>
+      </div>
+      <div *ngIf="colrtime=='notpaid'" style="padding: 3%;">
+        Hi.. {{name}}<br><br>
+        Bill status : <span style="background-color: rgb(233, 112, 112);border-radius: 20%;">PENDING from {{d}}</span><br><br>
+        <p style="font-size: 15pt;">Please pay the bill as early as possible to avoid extra charges</p>
+      </div>
+      </div>
+
+      <div style="margin-top: 5%;" class="container">
+        <div class="row ">
+          <div class="col-sm-6">
+            <img class=" zoom shadoww" style="width: 100%;height: 100%;" src="assets\Images\off.png">          </div>
+          <div class="col-sm-6">
+            <img class=" zoom shadoww" style="width: 100%;height: 100%;" src="assets\Images\all.png">
+          </div>
+        </div>  
+      </div>
+<div style="margin-left: 13%;"  class="container shadowww" >
+  <fieldset style="text-align: center;margin-top: 9%; ">  
+    <legend style="color: black;font-size: 20pt;padding-top: 30px;padding-bottom: 30px;">YOUR RECHARGE HISTORY</legend>
+    <table   class="table table-striped">
+      <thead >
+          <tr align="center">
+            <th align="center">STATUS</th>
+            <th align="center">DATE OF RECHARGE</th>
+            <th align="center">PAYMENT OPTION</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let plan of res | async">
+              <ng-container *ngIf="plan.paid==1; else elseTemplate">
+                <td align="center" style="color:green">Paid</td>
+                <td align="center">{{plan.pdate}}</td>
+                <td align="center">Through VoizFonica Payment</td>
+              </ng-container>
+              
+            
+            
+          </tr>
+        </tbody>
+      </table>
+    </fieldset>
+    </div>
+</section>
+
+
+<div class="footer-copyright text-center py-3">© 2020 Copyright:
+    <a href="#">VoiceFonica.com</a>
+  </div>

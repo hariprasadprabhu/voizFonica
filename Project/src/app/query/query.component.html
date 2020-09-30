@@ -1,0 +1,27 @@
+<div class="panel panel-primary">
+    <div class="panel-heading">
+      <h2>Plans details</h2>
+    </div>
+    <div class="panel-body">
+      <table class="table table-striped">
+        
+        <tbody>
+          <tr *ngFor="let qry of qrys | async">
+            <td>{{qry.qDate}}</td>
+            <td>{{qry.custQuery}}</td>
+            <td *ngIf="qry.solution!=null">{{qry.solution}}</td>
+            <ng-template *ngIf="qry.solution!=null; else elseTemplate">
+              <td><p style="color:green;">{{qry.solution}}</p></td>
+            </ng-template>
+           <ng-template #elseTemplate>
+            <td><p style="color: red;">Not Resolved</p></td>
+            </ng-template> 
+            
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <span><a href="/prepaidplans">Current plans</a></span>
+  </div>
+  
+  

@@ -1,0 +1,57 @@
+<app-headernav-prepaid></app-headernav-prepaid>
+<div align="center" class="w3-container">
+
+    <h2>Recharge</h2>
+    <p>Please select the Plan Here</p>
+<table>
+    <button align="center" (click)="myFunc('Demo1')"  class="w3-btn w3-block btnprpt w3-center">1 GB per Day</button>
+    <div id="Demo1" class="w3-container w3-hide">
+        <div *ngFor="let item of plan | async">
+        <div *ngIf="item.pack==1">
+            <tr>
+                <td class="frow">This offer have the validity of <h3>{{item.validity}} days</h3> data per day is <h3>{{item.pack}} GB</h3> </td>
+                <td align="center" class="srow"><button (click)="recharge(item.id)" class="btn btn-success">Recharge</button></td>
+            </tr>
+        </div>
+        
+    </div>
+    </div>
+
+    <button (click)="myFunc('Demo2')"  class="w3-btn w3-block btnprpt w3-center">2 GB per Day</button>
+    <div id="Demo2" class="w3-container w3-hide">
+        <div *ngFor="let item of plan | async">
+        <div *ngIf="item.pack==2">
+            <tr>
+                <td class="frow">This offer have the validity of <h3>{{item.validity}} days</h3> data per day is <h3>{{item.pack}} GB</h3> </td>
+                <td align="center" class="srow"><button (click)="recharge(item.id)" class="btn btn-success">Recharge</button></td>
+            </tr>
+        </div>
+    </div>
+    </div>
+    
+    <button (click)="myFunc('Demo3')"  class="w3-btn w3-block  btnprpt w3-center">3 GB per Day</button>
+    
+    <div id="Demo3" class="w3-container w3-hide">
+        <div *ngFor="let item of plan | async">
+        <div *ngIf="item.pack==3">
+            <tr>
+                <td class="frow">This offer have the validity of <h3>{{item.validity}} days</h3> data per day is <h3>{{item.pack}} GB</h3> </td>
+                <td align="center" class="srow"><button (click)="recharge(item.id)" class="btn btn-success">Recharge</button></td>
+            </tr>
+        </div>
+    </div>
+    </div>
+
+    <button (click)="myFunc('Demo4')"  class="w3-btn btnprpt w3-center">Special Offers</button>
+    <div id="Demo4" class="w3-container w3-hide">
+        <div *ngFor="let item of plan | async">
+        <div *ngIf="item.name!=null">
+            <tr>
+                <td class="frow"><h3>{{item.name}}!!!</h3> This plan have the validity of <h3>{{item.validity}} days</h3> and total data is <h3>{{item.pack}} GB</h3> </td>
+                <td class="srow"><button (click)="recharge(item.id)" class="btn btn-success">Recharge</button></td>
+            </tr>
+        </div>
+    </div>
+    </div>
+</table>
+    </div>

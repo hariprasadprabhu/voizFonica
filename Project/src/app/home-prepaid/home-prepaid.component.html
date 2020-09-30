@@ -1,0 +1,67 @@
+<app-headernav-prepaid></app-headernav-prepaid>
+<section class="register">
+    <br>
+    <div style="font-size: 20pt;" class="container container1">
+        <h3 style="font-size: 22pt;" align="center" [class]="colrtime">{{msg}} : {{demo}}</h3>
+        <button style="margin-left:42%;" *ngIf="demo=='Your plan is expired'" class="btn-success" [routerLink]="[ '/recharge']">Recharge Now</button>
+        <br><ng-container *ngIf="activeid!=0">
+          <div style="font-size: 20pt;" class="row">
+            <div class="col-sm-4">
+              <h4 style="font-size: 15pt;" align="center">Date of Recharge</h4>
+              <h3 style="font-size: 19pt;" align="center">{{activedate}}</h3>
+            </div>
+            <div class="col-sm-4">
+              <h4 style="font-size: 15pt;" align="center">Recharge Amount</h4>
+              <h3 style="font-size: 19pt;" align="center">{{activeamount}}</h3>
+            </div>
+            <div class="col-sm-4">
+              <h4 style="font-size: 15pt;" align="center">Data per Day</h4>
+              <h3 style="font-size: 19pt;" align="center">{{activepack}} GB</h3>
+            </div>
+          </div>  
+        </ng-container>
+        
+      </div>
+      <div style="margin-top: 4%;" align="center" *ngIf="service=='dongle'" class="container">
+        <img style="height: 100px;" src="assets\Images\pointing.gif"><a style="height: 200px;" href="http://voizfonica01.speedtestcustom.com/" target="_blank" class="btn-primary">
+          <button style="height: 60px; font-size: 25pt;" class="btn-primary">Check Data Speed</button>
+        </a><img style="height: 100px; transform: scaleX(-1)" src="assets\Images\pointing.gif">
+      </div>
+      <div style="margin-top: 5%;" class="container">
+        <div class="row ">
+          <div class="col-sm-6">
+            <a [routerLink]="[ '/pretoposttrack' ]"><img class=" zoom shadoww" style="width: 100%;height: 100%;" src="assets\Images\pretopost.png"></a>
+          </div>
+          <div class="col-sm-6">
+            <img class=" zoom shadoww" style="width: 100%;height: 100%;" src="assets\Images\all.png">
+          </div>
+        </div>  
+      </div>
+<div style="margin-left: 13%;"  class="container shadowww" >
+  <fieldset style="text-align: center;margin-top: 9%; ">  
+    <legend style="color: black;font-size: 20pt;padding-top: 30px;padding-bottom: 30px;">YOUR RECHARGE HISTORY</legend>
+    <table   class="table table-striped">
+      <thead >
+          <tr align="center">
+            <th align="center">STATUS</th>
+            <th align="center">DATE OF RECHARGE</th>
+            <th align="center">DATA / DAY</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let plan of ress">
+              
+                <td align="center" style="color: red;">Expired</td>
+                <td align="center">{{plan.rdate}}</td>
+                <td align="center">{{plan.plan_id}}GB per Day</td>
+          </tr>
+        </tbody>
+      </table>
+    </fieldset>
+    </div>
+</section>
+
+
+<div class="footer-copyright text-center py-3">© 2020 Copyright:
+    <a href="#">VoiceFonica.com</a>
+  </div>

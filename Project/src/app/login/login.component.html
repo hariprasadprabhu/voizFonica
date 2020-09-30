@@ -1,0 +1,152 @@
+<!-- <div class="container"><form #loginform="ngForm" (ngSubmit)="loginCust()">
+    <small class="text-danger">{{msg}}</small>
+    <div class="form-group">
+      <label for="phone">Mobile Number:</label>
+      <input type="email" class="form-control" placeholder="Enter email" name="email" [(ngModel)]=cust.phoneNum>
+    </div>
+    <div class="form-group">
+      <label for="pwd">Password:</label>
+      <input type="password" class="form-control" placeholder="Enter password" name="pwd" [(ngModel)]=cust.password>
+    </div>
+    <div class="form-group form-check">
+      <label class="form-check-label">
+        <input class="form-check-input" type="checkbox"> Remember me
+      </label>
+    </div>
+    <button type="submit" class="btn btn-primary">Login</button>
+    <div class="container signin">
+    <p>Already hava an account? <a href="/register">Register here</a>.</p>
+    </div> 
+  </form>
+</div> -->
+
+<app-header></app-header>
+
+
+<div class="modal fade" id="modalLoginForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+  aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">RESET PASSWORD</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <label data-error="wrong" data-success="right" for="defaultForm-email">Enter Your Phone Number</label>
+          <input type="email" id="defaultForm-email" class="form-control validate" required [(ngModel)]="cust.phoneNum">
+          <label data-error="wrong" data-success="right" for="defaultForm-email">Your email Id</label>
+          <input type="email" id="defaultForm-email" class="form-control validate" [(ngModel)]="cust.emailId">
+        </div>
+        <p>Password reset link will be sent to your email</p>
+      </div>
+      <div class="modal-footer d-flex justify-content-center">
+        <button class="btn btn-default btn-rounded mb-4 btn btn-success" data-toggle="modal" data-target="#enterotpform" type="submit"  data-dismiss="modal" (click)="sendEmail()">RESET</button><span>&nbsp;&nbsp;</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Second pop up -->
+<div class="modal fade" id="enterotpform" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+  aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">ENTER OTP</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <p *ngIf="message1=='red'" style="color: red;">{{message}}</p>
+          <p *ngIf="message1=='green'" style="color: green;">{{message}}</p>
+          <label data-error="wrong" data-success="right" for="defaultForm-email">Enter Your OTP sent to your mail</label>
+          <input type="email" id="defaultForm-email" class="form-control validate" #OTPP>
+        </div>
+      </div>
+      <div class="modal-footer d-flex justify-content-center">
+        <button  class="btn btn-default btn-rounded mb-4 btn btn-success" (click)="verify(OTPP.value)">VERIFY</button><span>&nbsp;&nbsp;</span>
+        <button [disabled]="trueOrFalse"  class="btn btn-default btn-rounded mb-4 btn btn-success" data-toggle="modal" data-target="#validated" type="submit"  data-dismiss="modal"  >RESET NOW</button><span>&nbsp;&nbsp;</span>
+    
+    
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Third pop up -->
+<div class="modal fade" id="validated" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+  aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">RESET PASSWORD</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <label data-error="wrong" data-success="right" for="defaultForm-email">Enter New Password</label>
+          <input type="password" id="defaultForm-email" class="form-control validate" [(ngModel)]="cust.password">
+          <label data-error="wrong" data-success="right" for="defaultForm-email">Re Enter the Password</label>
+          <input type="password" id="defaultForm-email" class="form-control validate" [(ngModel)]="cust.emailId">
+        </div>
+      </div>
+      <div class="modal-footer d-flex justify-content-center">
+        <button type="submit" class="btn btn-success" data-dismiss="modal" (click)="updatepwd()">RESET</button><span>&nbsp;&nbsp;</span>
+    
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+<div class="container-fluid">
+  <br><br>
+  <div align="center" id=login>
+  <form #LoginForm="ngForm" (ngSubmit)="loginCust()" align="center">
+  <h1>Login Here</h1>
+  <br><br>
+  <p style="color: red;">{{msg}}</p>
+    <div class="form-group">
+      <label for="email">Registered Mobile Number</label><br>
+      <input style="color:black" type="text" name="ph" id="ph"  required [(ngModel)]="cust.phoneNum"  #id="ngModel"
+          [class.is-invalid]="(id.invalid && id.touched) || id.dirty"
+          >
+            <div class="validate" *ngIf="(id.invalid && id.touched) || id.dirty">
+            <small *ngIf="id.errors?.required" class="text-danger">Mobile number is required</small>
+            </div>
+    </div>
+    <div class="form-group">
+      <label for="pwd">Password</label><br>
+      <input style="color:black" type="password"  name="psw" id="psw" required ngModel [(ngModel)]="cust.password" #pwd="ngModel" 
+          [class.is-invalid]="(pwd.invalid && pwd.touched) || pwd.dirty"
+          >
+            <div class="validate" *ngIf="(pwd.invalid && pwd.touched) || pwd.dirty">
+            <small *ngIf="pwd.errors?.required" class="text-danger">Password is required</small>
+           
+             </div>
+    </div>
+    <div class="checkbox">
+      <label><input type="checkbox" name="remember"> Remember me</label>
+    </div>
+    <br><br>
+    <button [disabled]="LoginForm.form.invalid" type="submit" class="btn btn-success">Login</button><span>&nbsp;&nbsp;</span>
+    <a href="" class="btn btn-default btn-rounded mb-4" data-toggle="modal" data-target="#modalLoginForm">Forgot Password?</a>
+    <br><br>
+    <span><a href="/register">New user?Register</a></span>
+   
+  </form><br><br><br><br><br>
+  </div><br><br><br><br><br><br>
+</div>
+<br><br>
+<div style="margin-top: -3.5%;" class="footer-copyright text-center py-3">© 2020 Copyright:
+  <a href="#">VoiceFonica.com</a>
+</div>

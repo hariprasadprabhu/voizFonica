@@ -1,0 +1,32 @@
+.frow
+{
+    width: 90%;
+    padding:20px;
+    background-color: darkkhaki;
+}
+.srow
+{
+
+    width:400px;
+    padding:20px;
+    margin-left:+20px ;
+    background-color: darkkhaki;
+}
+tr{
+    width: 100%;
+    border-style: solid;
+    border-color: black;
+    border-radius: 2px;
+    margin: 4%;
+}
+.btnprpt
+{
+    background-color: cyan;
+    width: 700px;
+    border-style: solid;
+    color: darkolivegreen;
+    border-collapse: collapse;
+    border-radius: 5%;
+    
+}
+

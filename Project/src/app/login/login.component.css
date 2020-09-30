@@ -1,0 +1,34 @@
+
+      .container-fluid{
+        background-image: url("src/assets/Images/login.png");
+        background-repeat: no-repeat;
+        background-size: cover;
+        height: 95%;
+        background-position: center center;
+        margin:0px;
+      }
+      #login
+      {
+        padding: 50px 60px 70px 60px;
+        width: 586px;
+        height: 600px;
+        color: white;
+        
+        background: #fff;
+        margin-left: 30%;
+        border-radius: 10px;
+        border-bottom-width: 20%;
+        background-image:url("src/assets/Images/loginupback.jpg");
+        
+      }
+
+      .footer-copyright
+{
+color: white;
+background-color: black;
+
+}
+.forgot
+      {
+        margin-left: 10px;
+      }
