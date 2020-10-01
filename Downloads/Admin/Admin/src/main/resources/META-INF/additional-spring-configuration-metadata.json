@@ -1,0 +1,12 @@
+{"properties": [
+  {
+    "name": "spring.mail.smtp.port",
+    "type": "java.lang.String",
+    "description": "A description for 'spring.mail.smtp.port'"
+  },
+  {
+    "name": "spring.mail.smtp.host",
+    "type": "java.lang.String",
+    "description": "A description for 'spring.mail.smtp.host'"
+  }
+]}
