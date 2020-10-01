@@ -40,6 +40,8 @@ import { PostpaidhomeComponent } from './postpaidhome/postpaidhome.component';
 import { HeadernavPostpaidComponent } from './headernav-postpaid/headernav-postpaid.component';
 import { PostpaidBillpaymentComponent } from './postpaid-billpayment/postpaid-billpayment.component';
 import { SpeedComponent } from './speed/speed.component';
+import { PostpaidPlansComponent } from './postpaid-plans/postpaid-plans.component';
+import { PlanBoughtComponent } from './plan-bought/plan-bought.component';
 
 localStorage.setItem('key','no');
 
@@ -73,7 +75,9 @@ localStorage.setItem('key','no');
     PostpaidhomeComponent,
     HeadernavPostpaidComponent,
     PostpaidBillpaymentComponent,
-    SpeedComponent
+    SpeedComponent,
+    PostpaidPlansComponent,
+    PlanBoughtComponent
   ],
   imports: [
     BrowserModule,

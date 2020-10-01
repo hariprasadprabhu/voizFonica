@@ -47,3 +47,92 @@ body {
     float: left;
     color: #999;
   }
+
+
+
+
+
+
+
+  @import url('https://fonts.googleapis.com/css?family=Rubik&display=swap');
+::before,
+::after{
+    margin:0;
+    padding:0;
+    box-sizing: inherit;
+}
+body{
+    background: #f6f6f6;
+}
+
+.box{
+    width: 100%;
+    margin:100px auto;
+    background-color: #283042;
+    
+    border-radius:7px;
+    margin-bottom: 1rem;
+    padding:1rem;
+    
+    box-shadow:.5rem 2px .5rem rgba(0,0,0,1);
+}
+
+
+
+.box .heading{
+    background: #7800CF;
+    border-radius:7px 7px 0px 0px;
+    padding: 10px;
+    color: #fff;
+    text-align: center;
+    font-family: "Rubik";
+
+}
+
+.faqs{
+    padding :  0px 20px 20px;
+    
+    justify-content: space-between;
+}
+
+::-webkit-details-marker{
+    float:right;
+    margin-top:3px;
+   
+    
+
+}
+
+details{
+    background: #f6f6f6;
+    padding: 10px 20px;
+    border-radius:7px;
+    margin-top:20px;
+    font-family: "Rubik";
+    font-size: 14px;
+    letter-spacing: 1px;
+}
+
+details summary{
+    outline:none;
+    
+}
+
+.text p{
+    color: rgba(255,255, 255,.6);
+    font-size: 1.4rem;
+    padding: 2rem;
+    background-color:#212838;
+    transition : max-height 650ms;
+
+}
+
+details
+{
+  font-size: 15pt;
+}
+
+summary
+{
+  padding: 1%;
+}

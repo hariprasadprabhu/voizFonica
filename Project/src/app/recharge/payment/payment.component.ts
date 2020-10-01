@@ -24,6 +24,7 @@ export class PaymentComponent implements OnInit {
   img1="none";
   img2="none";
   distance=0;
+  service=localStorage.getItem('service')
   abc=true;
   data;
   hist=new PrepaidHistory()

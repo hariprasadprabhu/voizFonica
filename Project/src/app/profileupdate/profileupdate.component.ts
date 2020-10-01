@@ -1,37 +1,31 @@
 import { Component, OnInit } from '@angular/core';
-
+import { Observable } from 'rxjs';
+import { RegistrationService } from '../registration.service';
+import {Customer1} from '../customer1'
 @Component({
   selector: 'app-profileupdate',
   templateUrl: './profileupdate.component.html',
   styleUrls: ['./profileupdate.component.css']
 })
 export class ProfileupdateComponent implements OnInit {
-name="hari"
-service="postpaid"
-ids="overview"
-act=""
-act2=""
-act3=" "
-  constructor() { 
-    this.act=localStorage.getItem('act')
-    this.act2=localStorage.getItem('act2')
-    this.act3=localStorage.getItem('act3')
-    this.service=localStorage.getItem('service')
+  phno;
+  service=localStorage.getItem('service')
+  customer:Observable<Customer1>
+  cust=new Customer1();
+  constructor(private _service:RegistrationService) { 
+    this.phno=localStorage.getItem('key');
+    this.customer=_service.getvalue(this.phno);
+    this.customer.subscribe(customer=>{
+      this.cust=customer;
+    });
   }
 
   ngOnInit(): void {
   }
 
-  setting()
+  update()
   {
-    this.ids="settigns"
-
-    this.act=localStorage.getItem('act')
-    this.act2=localStorage.getItem('act2')
-    this.act3=localStorage.getItem('act3')
-
-    localStorage.setItem('act','')
-    localStorage.setItem('act2','active')
-    localStorage.setItem('act3','')
+    return this._service.updatecust(this.cust).subscribe();
   }
+  
 }

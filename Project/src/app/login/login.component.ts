@@ -82,17 +82,17 @@ export class LoginComponent implements OnInit {
   sendEmail()
   {
     console.log("OTP IS="+this.otp)
-    // this.mail.text="Hi please use below otp to reset your password \nOTP="+this.otp+"\nDont Share this OTP with any one\nThank you And Regards\nVoizFonica";
-    // this.mail.to="lshariprasadp@gmail.com";
-    // this.mail.subject="ResetPassword!";
-    // this._service.send_confirmation(this.mail).subscribe(
-    //   data=>{
-    //     console.log("mails sent")
-    //   },
-    //   error=>{
-    //     console.log(error)
-    //   }
-    // );
+    this.mail.text="Hi please use below otp to reset your password \nOTP="+this.otp+"\nDont Share this OTP with any one\nThank you And Regards\nVoizFonica";
+    this.mail.to="lshariprasadp@gmail.com";
+    this.mail.subject="ResetPassword!";
+    this._service.send_confirmation(this.mail).subscribe(
+      data=>{
+        console.log("mails sent")
+      },
+      error=>{
+        console.log(error)
+      }
+    );
   }
 
   verify(otpval)

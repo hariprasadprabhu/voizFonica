@@ -1,5 +1,6 @@
-
-       <div class="modal fade" id="modalLoginForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+<app-headernav-prepaid *ngIf="service=='prepaid'"></app-headernav-prepaid>
+<app-headernav-postpaid *ngIf="service=='postpaid'"></app-headernav-postpaid>
+       <!-- <div class="modal fade" id="modalLoginForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
        aria-hidden="true">
        <div class="modal-dialog" role="document">
          <div class="modal-content">
@@ -22,8 +23,8 @@
              </div>
              <p class="text-danger">Dont Refresh or Press back button We are processing your transaction safely</p>
              <p>After verification you will be redirected to the next page</p>
-             <button (click)="confirmation()" class="btn-success" data-dismiss="modal" aria-label="Close" >CONFIRM</button>  
-             <!-- [disabled]="abc" -->
+             <button (click)="confirmation()" class="btn-success" data-dismiss="modal" aria-label="Close">CONFIRM</button>  
+             [disabled]="abc" 
            </div>
            <div class="modal-footer d-flex justify-content-center">
            </div>
@@ -42,17 +43,8 @@
               <i class="fa fa-cc-mastercard" style="color:red;"></i>
               <i class="fa fa-cc-discover" style="color:orange;"></i>
             </div>
-            <div style="color: green; width:100%;" class="container">
-              <div class=col-sm-4>
-              Data/Day : {{data}}
-              </div>
-              <div class=col-sm-4>
-                Validity : {{days}}
-              </div>
-              <div class=col-sm-4>
-                Amount : {{amount}}
-              </div>
-            </div>
+            <label for="cname">Enter Bill Amount</label>
+            <input type="text" id="amount" name="amount" placeholder="Amount">
             <label for="cname">Name on Card</label>
             <input type="text" id="cname" name="cardname" placeholder="John More Doe">
             <label for="ccnum">Credit card number</label>
@@ -71,4 +63,145 @@
             </div>
             <button class="btn-success" data-toggle="modal" data-target="#modalLoginForm">Proceed</button>
         </div>
-    </div>
+    </div> -->
+
+    <div class="modal fade" id="modalLoginForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+       aria-hidden="true">
+       <div class="modal-dialog" role="document">
+         <div class="modal-content">
+           <div class="modal-header text-center">
+             <h4 class="modal-title w-100 font-weight-bold">VERIFICATION</h4>
+           </div>
+           <div class="modal-body mx-3">
+             <div class="md-form mb-5">
+                 <p class="text-danger" *ngIf="msg=='Wrong OTP'">{{msg}}</p>
+                 <p class="text-success" *ngIf="msg=='OPT Matched Please press CONFIRM to Continue'">{{msg}}</p>
+                 <p>Please spend your 2 minutes for safe Transaction</p>
+               <div class="container mt-5">
+                <div id="recaptcha"></div>
+                <button (click)="otp();" class="btn btn-warning">Verify user by phoneNumber</button>
+                <div *ngIf="toggle">
+                    <input type="text" [(ngModel)]="code" name="code" placeholder="Enter Code">
+                    <button (click)="verify();" class="btn-success">Verify</button>
+                </div>
+            </div>
+             </div>
+             <p class="text-danger">Dont Refresh or Press back button We are processing your transaction safely</p>
+             <p>After verification you will be redirected to the next page</p>
+             <button (click)="confirmation()" class="btn-success" data-dismiss="modal" aria-label="Close">CONFIRM</button>   
+             <!-- [disabled]="abc" -->
+           </div>
+           <div class="modal-footer d-flex justify-content-center">
+           </div>
+         </div>
+       </div>
+     </div>
+
+       
+       <div class="cardss">
+        <div id="card-success" class="hidden">
+          <i class="fa fa-check"></i>
+          <p>Payment Successful!</p>
+        </div>
+        <div id="form-errors" class="hidden">
+          <i class="fa fa-exclamation-triangle"></i>
+          <p id="card-error">Card error</p>
+        </div>
+        <div id="form-container">
+        
+          <div id="card-front">
+            <div id="shadow"></div>
+            <div id="image-container">
+              
+              <span id="amount">paying: <input type="text" id="amount" name="amount" placeholder="Amount" required   ngModel  #amount="ngModel"  
+                  [class.is-invalid]="(amount.invalid && amount.touched) || amount.dirty">
+                    <span class="validate" *ngIf="(amount.invalid && amount.touched) ||amount.dirty">
+                    <small *ngIf="amount.errors?.required" class="text-danger">Amount is required</small>
+                    </span></span>
+              <span id="card-image">
+              
+                </span>
+            </div>
+           
+            <div id="cardholder-container">
+            <label for="card-number">
+                Card Number
+              </label>
+            <input type="text" id="card-number" placeholder="1234 5678 9101 1112" length="16" required   ngModel  #number="ngModel"  
+            [class.is-invalid]="(number.invalid && number.touched) || number.dirty">
+              <span class="validate" *ngIf="(number.invalid && number.touched) ||number.dirty">
+              <small *ngIf="number.errors?.required" class="text-danger">Card Number is required</small>
+              </span>
+          </div>
+            <div id="cardholder-container">
+              <label for="card-holder">Card Holder
+              </label>
+              <input type="text" id="card-holder" placeholder="e.g. John Doe" required   ngModel  #name="ngModel"  
+              [class.is-invalid]="(name.invalid && name.touched) || name.dirty">
+               <div class="validate" *ngIf="(name.invalid && name.touched) ||name.dirty">
+                <small *ngIf="name.errors?.required" class="text-danger">Name is required</small>
+                </div>
+            </div>
+            
+            <div id="exp-container">
+              <label for="card-exp">
+                  Expiration
+                </label>
+                <div class="row">
+                <select id="month">
+                  <option>MM</option>
+                  <option value="jan">01</option>
+                  <option value="feb">02</option>
+                  <option value="mar">03</option>
+                  <option value="apr">04</option>
+                  <option value="may">05</option>
+                  <option value="jun">06</option>
+                  <option value="jul">07</option>
+                  <option value="aug">08</option>
+                  <option value="sep">09</option>
+                  <option value="oct">10</option>
+                  <option value="nov">11</option>
+                  <option value="dec">12</option>
+                  </select><span>&nbsp;&nbsp;</span>
+                <select id="years">
+                  <option>YY</option>
+            <option value="2020">2020</option>
+                  <option value="2021">2021</option>
+                  <option value="2022">2022</option>
+                  <option value="2023">2023</option>
+                  <option value="2024">2024</option>
+                  <option value="2025">2025</option>
+                  <option value="2026">2026</option>
+                  <option value="2027">2027</option>
+                  <option value="2028">2028</option>
+                  <option value="2029">2029</option>
+                  <option value="2030">2030</option>
+                </select></div>
+            </div>
+                <div id="cvc-container">
+              <label for="card-cvc"> CVC/CVV</label>
+              <input id="card-cvc" placeholder="XXX-X" type="text" min-length="3" max-length="4" required   ngModel  #cvv="ngModel"  
+              [class.is-invalid]="(cvv.invalid && cvv.touched) || cvv.dirty">
+                <div class="validate" *ngIf="(cvv.invalid && cvv.touched) ||cvv.dirty">
+                <small *ngIf="cvv.errors?.required" class="text-danger">CVV is required</small>
+                </div>
+              <p>Last 3 or 4 digits</p>
+            </div>
+          </div>
+      
+          <div id="card-back">
+            <div id="card-stripe">
+            </div>
+        
+          </div>
+          
+          <input type="text" id="card-token" />
+          <br><br>
+          
+        
+        </div>
+          <div align="center">
+            <br><br>
+            <button class="btn btn-success" data-toggle="modal" data-target="#modalLoginForm">Proceed</button>
+          </div>
+      </div>

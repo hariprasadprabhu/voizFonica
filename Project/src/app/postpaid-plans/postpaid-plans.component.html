@@ -1,0 +1,29 @@
+<app-headernav-postpaid></app-headernav-postpaid>
+<div class="container">
+
+
+         
+    <div class="row">
+                   
+                        <div *ngFor="let Postpaid of postpaids; let i=index">
+                            <div class="sm-col-4">
+                            <div style="width: 300px; margin:30px"   class="card w-20">
+                            <div class="card-body" >
+                              <h3 class="card-title">Total Data : {{Postpaid.Data}}</h3>
+                              <p class="card-text">Monthly Rent : {{Postpaid.Monthly}}</p>
+                              <p class="card-text">Pack name : {{Postpaid.Pack}}</p>
+                              <p class="card-text">Validity: {{Postpaid.Validity}}</p>
+                                
+                              <a style="margin-left: 200px;" (click)="save(i)" class="btn btn-primary">Buy</a>
+                            </div>
+                            </div>
+                        </div>
+     
+                    </div>
+                         
+    </div>  
+       
+  </div>
+<div style="margin-top: -3.5%;" class="footer-copyright text-center py-3">© 2020 Copyright:
+    <a href="#">VoizFonica.com</a>
+  </div>

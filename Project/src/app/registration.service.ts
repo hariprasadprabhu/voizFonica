@@ -10,6 +10,7 @@ import { Activeplans } from './activeplans';
 import { PostActivePlan } from './post-active-plan';
 import {Mailformat} from './mailformat'
 import { PrepaidHistory } from './prepaid-history';
+import { Customer1 } from './customer1';
 @Injectable({
   providedIn: 'root'
 })
@@ -95,5 +96,18 @@ export class RegistrationService {
  update(cust:Customer):Observable<any>
   {
     return this._http.post("http://localhost:8081/updatepwd",cust)
+  }
+
+  updatecustsub(custsub):Observable<any>{
+    return this._http.post("http://localhost:8081/updatePostSub",custsub);
+  }
+
+  getvalue(phno):Observable<any>
+  {
+    return this._http.get("http://localhost:8081/getval/"+phno);
+  }
+  updatecust(cust:Customer1):Observable<any>
+  {
+    return this._http.post("http://localhost:8081/updatecustomer",cust);
   }
 }

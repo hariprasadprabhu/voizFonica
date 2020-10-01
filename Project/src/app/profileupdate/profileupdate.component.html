@@ -1,32 +1,93 @@
 <app-headernav-prepaid *ngIf="service=='prepaid'"></app-headernav-prepaid>
 <app-headernav-postpaid *ngIf="service=='postpaid'"></app-headernav-postpaid>
-<div class="container" style="margin-top: 2%;">
-    <div class="row profile" style="border-style:solid;background-color: rgb(186, 149, 221);">
-		<div class="col-sm-4" style="height: 400px;" >
-			<div class="profile-sidebar">
-				<!-- SIDEBAR USERPIC -->
-				<div align="center"  class="profile-userpic">
-                    <img src="https://img.icons8.com/bubbles/100/000000/administrator-male.png" alt="Avatar" class="avatar">
-				</div>
-				<!-- END SIDEBAR USERPIC -->
-				<!-- SIDEBAR USER TITLE -->
-				<div class="profile-usertitle">
-					<div class="profile-usertitle-name">
-						{{name}}
-					</div>
-					<div class="profile-usertitle-job">
-						{{service}}
-					</div>
-                </div>
+<div class="container bootstrap snippets bootdey">
+    <div class="row">
+        <!-- BEGIN USER PROFILE -->
+        <div class="col-md-12">
+          <div class="grid profile">
+            <div class="grid-header">
+              <div class="col-xs-2">
+               <br><br><br><br>
+              </div>
+              <div class="col-xs-7"><br><br><br>
+                <h3>{{cust.fname}} {{cust.lname}}</h3>
+                <p>Customer of VoizFonica</p>
+                <p>{{cust.address}}</p>
+              </div>
+              
             </div>
-            <button style="width:100%;border-color:rgb(186, 149, 221) ;background-color: rgb(186, 149, 221);" [routerLink]="['/update/editprofile']">EDIT</button>
-            <button style="width:100%;border-color:rgb(247, 247, 137) ;background-color: rgb(247, 247, 137) " [routerLink]="['/update/setting']">SETTINGS</button>
-            <button style="width:100%;margin-bottom: 2%;">LOGOUT</button>
+            <div class="grid-body">
+              <ul class="nav nav-tabs">
+                <li class="active"><a href="#profile" data-toggle="tab">Profile</a></li><span>&nbsp;&nbsp;&nbsp;</span>
+                <button class="btn btn-primary" data-toggle="modal" data-target="#MyModal">Edit profile</button>
+              </ul>
+              
+              <div class="tab-content">
+                <!-- BEGIN PROFILE -->
+                <div class="tab-pane active" id="profile">
+                  <p class="lead">My Profile</p>
+                  <hr>
+                  <div class="row">
+                    <div class="col-md-6">
+                      <p><strong>Email:</strong>{{cust.email}}</p>
+                      <p><strong>Aadhaar Number:</strong>{{cust.adharNo}}</p>
+                      <p><strong>Service Type:</strong>{{cust.type}}</p>
+                     </div>
+                    <div class="col-md-6">
+                      <p><strong>Address:</strong>{{cust.address}}</p>
+                      <p><strong>Phone number:</strong>{{cust.phno}}</p>
+                      <p><strong>Alternate Phone number:</strong>{{cust.altPhno}}</p>
+                      </div>
+                  </div>
+                  
+                  <div class="custom-control custom-switch">
+                    
+                    <input type="checkbox" class="custom-control-input" id="customSwitches">
+                    <label class="custom-control-label" for="customSwitches">Notify me when there is a new offer</label>
+                  </div>
+               
+              </div>
+            </div>
+          </div>
         </div>
-        <div class="col-sm-8">
-            <router-outlet></router-outlet>
-        </div>
+      </div>
     </div>
 
-    
-	
+    <div class="modal fade" id="MyModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <form #customerForm="ngForm" (ngSubmit)="update()">
+              <label for="First_name">First name:</label><br>
+              <input type="text"  class="form-control1" name="First_name" id="First_name"  [(ngModel)]="cust.fname" >
+
+              <label for="Last_name">Last name:</label><br>
+              <input type="text"  class="form-control1" name="Last_name" id="Lastt_name"  [(ngModel)]="cust.lname">
+        
+              <label for="Alternate_No">Alternate Mobile Number:</label><br>
+              <input type="text"  class="form-control1" name="Alternate_No" id="Alternate_No" [(ngModel)]="cust.altPhno">
+
+             
+              <label for="Aadhar_number">Aadhar Number:</label><br>
+              <input type="text"  class="form-control1" name="Aadhar_number" id="Aadhar_number" [(ngModel)]="cust.adharNo">
+          
+             
+            
+            <label for="Address">Address:</label><br>
+            <textarea type="text" rows="4" cols="50"class="form-control2" name="Address" id="address"  [(ngModel)]="cust.address"></textarea>
+            <br/><br>
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button><span>&nbsp;&nbsp;&nbsp;</span>
+            <button type="submit" class="btn btn-primary" data-dismiss="modal"(click)="update()" >Save changes</button>
+            </form>
+            </div>
+            
+          </div>
+        </div>
+      </div>
+

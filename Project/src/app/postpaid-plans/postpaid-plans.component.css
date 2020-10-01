@@ -1,0 +1,37 @@
+
+.container{
+    margin-top:2%;
+    border:2px solid rgba(0, 0, 0, 0.26);
+    background-color: rgb(218, 240, 240);
+    margin-bottom: 6%;
+  }
+  .btn{
+    margin-right: 20px;
+    
+  }
+
+  .fa{
+    font-size: 10px;
+  }
+  .border{
+    padding: 25px;
+  }
+  #box{
+      background:#fff;
+      
+  }
+  .card-text{
+       text-shadow:white;
+      background-color:rgb(255, 255, 255);
+  }
+  .card{
+      font-size: 15pt;
+      background-color:rgb(255, 255, 255);
+  }
+ 
+  .footer-copyright
+  {
+  color: white;
+  background-color: black;
+  
+  }

@@ -24,9 +24,11 @@ import { PretopostComponent } from './pretopost/pretopost.component';
 import { PostpaidhomeComponent } from './postpaidhome/postpaidhome.component';
 import { PostpaidBillpaymentComponent } from './postpaid-billpayment/postpaid-billpayment.component';
 import { SpeedComponent } from './speed/speed.component';
+import { PostpaidPlansComponent } from './postpaid-plans/postpaid-plans.component';
+import { PlanBoughtComponent } from './plan-bought/plan-bought.component';
 
 const routes: Routes = [
-  {path:'',redirectTo:'login', pathMatch:'full'},
+  {path:'',redirectTo:'payment', pathMatch:'full'},
   {path:'register',component:RegistrationComponent},
   {path:'loginsuccess',component:HomePrepaidComponent},
   {path:'login',component:LoginComponent},
@@ -53,7 +55,9 @@ const routes: Routes = [
   {path:'pretoposttrack',component:PretopostComponent},
   {path:'postpaidhome',component:PostpaidhomeComponent},
   {path:'postpaidbill',component:PostpaidBillpaymentComponent},
-  {path:'speed',component:SpeedComponent}
+  {path:'speed',component:SpeedComponent},
+  {path:'postplans',component:PostpaidPlansComponent},
+  {path:'planselected',component:PlanBoughtComponent}
 ];
 
 @NgModule({
