@@ -1,0 +1,43 @@
+.login{
+    background-image:url("src/assets/Images/wood.jpg");    
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100%;
+    background-position: center center;
+    margin:0px;
+}
+.form1
+{
+    padding: 50px 60px 70px 60px;
+    width: 586px;
+    height: auto;
+    background: #fff;
+    margin-left: 165px;
+    border-radius: 10px;
+    border-bottom-width: 20%;
+}
+.button{
+    align-self: right;
+}
+.h2{
+    text-align: center;
+}
+select {
+    width: 60%;
+    
+    }
+.form-control1
+{
+    width: 100%;
+    display: block;
+    border: none;
+    border-bottom: 2px solid #ebebeb;
+    padding: 5px 0;
+    color: #222;
+    margin-bottom: 31px;
+    font-family: 'Roboto Slab';
+}
+.form-control2
+{
+    width: 100%;
+}

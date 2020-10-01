@@ -1,0 +1,24 @@
+<h2 align="center">Chat With Customer</h2>
+<div style="padding-left: 500px;padding-top: 4%; background-color: rgb(247, 247, 247);" class="container-fluid">
+    
+<div style="height: 500px;border: solid;border-color: black;width: 550px; overflow: scroll;" #scrollMe [scrollTop]="scrollMe.scrollHeight">
+<div *ngFor="let item of chats | async">
+<div *ngIf="item.admin_id!=0" class="container">
+  <img src="/assets/Images/adminside.png" alt="Avatar" style="width:100%;">
+  <p >{{item.message}}</p>
+  <span class="time-right">11:00</span>
+</div>
+
+<div *ngIf="item.admin_id==0" class="container darker">
+  <img src="/assets/Images/customerside.jpg" alt="Avatar" class="right" style="width:100%;">
+  <p>{{item.message}}</p>
+  <span class="time-left">11:01</span>
+</div>
+</div>
+</div>
+
+<input style="width: 500px;" placeholder="Type Here.." type="text" id="text" [(ngModel)]="chat.message"  #msg="ngModel"><button (click)="call()" type="reset">Send</button>
+<br>
+<br>
+<br><button style="margin-left: 200px;" class="btn-primary" [routerLink]="[ '/customerdetails']">Go Back to Home</button>
+</div>

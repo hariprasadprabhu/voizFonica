@@ -1,0 +1,52 @@
+.form-inline
+{
+  position: absolute;
+  right: 50px;
+  top: 100px;
+  margin-right: 40%;
+
+}
+
+#j2,#navbarDropdown
+{
+  color: rgb(59, 55, 55);
+}
+.nav-item
+{
+  
+  width: 180px;
+  text-align: center;
+}
+#drop1
+{
+  position: absolute;
+  right: 50px;
+  top: 100px;
+  margin-right: 20%;
+}
+.forservice
+{
+  margin-top: 50px;
+}
+.container-fluid
+{
+        background-image: url("src/assets/Images/wood.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+        height: 100%;
+        background-position: center;
+        margin:0px;
+        height: 100%; 
+        position: relative; 
+        width: 400px;
+        height: 2000px;
+        top: 0; 
+        left: 0; 
+
+  /* Preserve aspet ratio */
+  min-width: 100%;
+  min-height: 100%;
+
+
+
+}

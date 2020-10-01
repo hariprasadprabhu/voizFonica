@@ -1,0 +1,54 @@
+<div class="container">
+  <form #payForm="ngForm" (ngSubmit)="paymentForm()">
+      <div class="padding">
+          <div class="row">
+              <div class="container-fluid d-flex justify-content-center">
+                  <div class="col-sm-8 col-md-6">
+                      <div class="card">
+                          <div class="card-header">
+                              <div class="row">
+                                  <div class="col-md-6"> <span>CREDIT/DEBIT CARD PAYMENT</span> </div>
+                                  <div class="col-md-6 text-right" style="margin-top: -5px;"> <img src="https://img.icons8.com/color/36/000000/visa.png"> <img src="https://img.icons8.com/color/36/000000/mastercard.png"> <img src="https://img.icons8.com/color/36/000000/amex.png"> </div>
+                              </div>
+                          </div>
+                          <div class="card-body" style="height: 350px">
+                              <div class="form-group"> <label for="cc-number" class="control-label">CARD NUMBER</label> 
+                            <input  ngModel  name="cc-number" id="cc-number" type="tel" class="input-lg form-control cc-number" autocomplete="cc-number" placeholder="•••• •••• •••• ••••" required maxlength="19" pattern="/[\d{4,16}]/s"
+                                  
+                              #cardno="ngModel" (click)="cardnumber(cardno)" autocomplete="off"> 
+                        <div class="alert alert-danger" *ngIf="!cardno.valid && cardno.touched">
+                            <div *ngIf="cardno.errors?.required">Please fill Card Number</div>
+                            <div *ngIf="cardno.errors?.maxlength">length is not matching</div>
+                            <div *ngIf="cardno.errors?.pattern">give a gap between 4 digits</div>
+                          </div>
+                              </div>
+                              
+                              <div class="row">
+                                  <div class="col-md-6">
+                                      <div class="form-group"> <label for="cc-exp" class="control-label">CARD EXPIRY</label> 
+                                    <input ngModel name="cc-exp" id="cc-exp" type="tel" class="input-lg form-control cc-exp"  placeholder="•• / ••" required  pattern="/^\d{2}\/\d{2}$/" #cardexp="ngModel"  >
+                                    <div class="alert alert-danger" *ngIf="!cardexp.valid && cardexp.touched">
+                                    <div *ngIf="cardexp.errors.required">please fill Card Exp </div>
+                                    <div *ngIf="cardexp.errors.pattern"> Pattern is not matching</div> 
+                                  </div>
+                                  </div>
+                                  <div class="col-md-6">
+                                      <div class="form-group"> <label for="cc-cvc" class="control-label">CARD CVC</label>
+                                     <input ngModel name="cc-cvc" id="cc-cvc" type="tel" class="input-lg form-control cc-cvc" autocomplete="off" placeholder="••••" required maxlength="3" #cardcvv="ngModel" (click)="showValue(cardcvv)" autocomplete="off">
+                                     <div class="alert alert-danger" *ngIf="!cardcvv.valid && cardcvv.touched">
+                                         <div *ngIf="cardcvv.errors.required">please fill Card cvv </div>
+                                         <div *ngIf="cardcvv.errors.maxlength">pattern is not matching</div></div> </div>
+                                  </div>
+                              </div>
+                              <div class="form-group"> <label for="numeric" class="control-label">CARD HOLDER NAME</label> <input ngModel name="numeric" type="text" class="input-lg form-control" #cardholdername="ngModel"> </div>
+                              <div><button [disabled]="payForm.form.invalid" type="submit"  class="btn btn-success" name="submit" id="submit">Payment</button><br><br></div>
+                          </div>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+      </form>  
+          
+</div>

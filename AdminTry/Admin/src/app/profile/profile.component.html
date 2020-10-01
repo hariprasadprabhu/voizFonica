@@ -1,0 +1,185 @@
+
+<div class="profile">
+    <div class="container emp-profile">
+    
+        
+        <form method="post">
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="profile-img">
+                        <img src="assets/Images/customer.jpg" alt="customer"/>
+                        
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="profile-head">
+                                <h5>
+                                    {{adm.fname}} {{adm.lname}}
+                                </h5>
+                                <h6>
+                                    Web Developer and Designer
+                                </h6>
+                                <p class="proile-rating">RATINGS : <span>8/10</span></p>
+                        <ul class="nav nav-tabs" id="myTab" role="tablist">
+                            <li class="nav-item">
+                                <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">About</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Timeline</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-2">
+                    <input type="submit" class="profile-edit-btn" name="btnAddMore" value="Edit Profile" data-toggle="modal" data-target="#MyModal"/>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4">
+                    
+                </div>
+                <div class="col-md-8">
+                    <div class="tab-content profile-tab" id="myTabContent">
+                        <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <label>Admin ID</label>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <p>{{id}}</p>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <label>First Name</label>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <p>{{adm.fname}}</p>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <label>Last Name</label>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <p>{{adm.lname}}</p>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <label>Email</label>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <p>{{adm.email}}</p>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <label>Phone</label>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <p>{{adm.phno}}</p>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <label>Profession</label>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <p>Customer service</p>
+                                        </div>
+                                    </div>
+                        </div>
+                        <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <label>Experience</label>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <p>5 years</p>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <label>Salary</label>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <p>30000 /month</p>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <label>Projects</label>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <p>230</p>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <label>English Level</label>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <p>Expert</p>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <label>Availability</label>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <p>6 months</p>
+                                        </div>
+                                    </div>
+                            <div class="row">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div><br><br>
+        </form>           
+    </div>
+    </div>
+    
+    <div class="modal fade" id="MyModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Update profile</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <form #customerForm="ngForm" (ngSubmit)="update()">
+              <label for="First_name">First name:</label><br>
+              <input type="text"  class="form-control" name="First_name" id="First_name" required [(ngModel)]="adm.fname" #name="ngModel"
+              [class.is-invalid]="(name.invalid && name.touched) || name.dirty"
+              >
+                <div class="validate" *ngIf="(name.invalid && name.touched) || name.dirty">
+                <small *ngIf="name.errors?.required" class="text-danger">First name is required</small>
+                </div>
+    
+    
+              <label for="Last_name">Last name:</label><br>
+              <input type="text"  class="form-control" name="Last_name" id="Lastt_name"  [(ngModel)]="adm.lname">
+        
+              <label for="Alternate_No">Mobile Number:</label><br>
+              <input type="text"  class="form-control" name="Alternate_No" id="Alternate_No" [(ngModel)]="adm.phno">
+    
+              <label for="email">Email:</label><br>
+              <input type="text"  class="form-control" name="email" id="email" [(ngModel)]="adm.email">
+    
+    
+    
+              
+            <br/><br>
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button><span>&nbsp;&nbsp;&nbsp;</span>
+            <button type="submit"  class="btn btn-primary" data-toggle="modal" data-dismiss="modal">Save changes</button>
+            </form>
+            </div>
+            
+          </div>
+        </div>
+      </div>
+    

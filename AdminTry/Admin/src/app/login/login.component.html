@@ -1,0 +1,41 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+<a class="navbar-brand">VoizFonica - Admin </a></nav>
+
+<div class="container-fluid"><br><br>
+  <div id=login class="col-sm-5">
+  <form #LoginForm="ngForm" (ngSubmit)="loginAdmin()" action="/customerdetails">
+  <h1>Login</h1>
+  <br><br>
+    <div class="form-group">
+      <input type="text" placeholder="Enter Employee Id *" name="id" id="id"  required [(ngModel)]="admin.id"  #id="ngModel"
+          [class.is-invalid]="(id.invalid && id.touched) || id.dirty"
+          >
+            <div class="validate" *ngIf="(id.invalid && id.touched) || id.dirty">
+            <small *ngIf="id.errors?.required" class="text-danger">Employee Id is required</small>
+            </div>
+    </div>
+    <div class="form-group">
+      <input type="password" placeholder="Password *"  name="psw" id="psw" required ngModel [(ngModel)]="admin.password" #pwd="ngModel" 
+          [class.is-invalid]="(pwd.invalid && pwd.touched) || pwd.dirty"
+          >
+            <div class="validate" *ngIf="(pwd.invalid && pwd.touched) || pwd.dirty">
+            <small *ngIf="pwd.errors?.required" class="text-danger">Password is required</small>
+           
+             </div>
+    </div>
+    <div class="checkbox">
+      <label><input type="checkbox" name="remember"> Remember me</label>
+    </div>
+    <br><br>
+    <button [disabled]="LoginForm.form.invalid" type="submit" class="btn btn-success">Login</button><span>&nbsp;&nbsp;</span>
+   
+
+
+    <span class="psw"> <a href="#">Forgot password?</a></span>
+    <br><br>
+    <small  class="text-danger">{{msg}}</small><br>
+    <span><a href="/register">New user?Register</a></span>
+   
+  </form><br><br><br><br><br>
+  </div><br><br><br><br><br><br>
+</div>

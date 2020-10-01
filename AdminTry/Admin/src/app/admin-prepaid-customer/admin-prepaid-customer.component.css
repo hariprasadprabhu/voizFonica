@@ -1,0 +1,19 @@
+.service
+{
+    position: relative;
+}
+input
+{
+    width: 100%;
+    display: block;
+    border: none;
+    border-bottom: 2px solid #ebebeb;
+    padding: 5px 0;
+    color: #222;
+    margin-bottom: 31px;
+    font-family: 'Roboto Slab';
+}
+select {
+    width: 60%;
+    
+    }

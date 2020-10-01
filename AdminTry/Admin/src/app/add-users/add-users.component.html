@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<body>
+<div class="container-field">
+<div class="login">
+<div class="col-sm-5"><br> <br>
+<form class="form1" #customerForm="ngForm" (ngSubmit)="storeuser()"> <br> <br>
+  <h2>ADD CUSTOMER</h2>
+    <div class="form-group1">  
+      <label for="First_name">First name:</label><br>
+      <!-- validation 1-->
+      <input type="text"  class="form-control1" name="First_name" id="First_name"  required [(ngModel)]="user.fname" #First_name="ngModel"
+          [class.is-invalid]="(First_name.invalid && First_name.touched) || First_name.dirty">
+          
+       <div class="validate" *ngIf="(First_name.invalid && First_name.touched) || First_name.dirty">
+        <small *ngIf="First_name.errors?.required" class="text-danger">First name is required</small>
+        </div>
+      <!-- validation Ends-->
+    </div>
+    <div class="form-group1">
+        <label for="Last_name">Last name:</label><br>
+      </div>
+      <!-- validation 2-->
+      <input type="text"  class="form-control1" name="Last_name" id="Last_name" [(ngModel)]="user.lname" required #Last_name="ngModel"
+          [class.is-invalid]="(Last_name.invalid && Last_name.touched) || Last_name.dirty">
+       <div class="validate" *ngIf="(Last_name.invalid && Last_name.touched) || Last_name.dirty">
+        <small *ngIf="Last_name.errors?.required" class="text-danger">Last name is required</small>
+        </div>
+      <!-- validation Ends-->
+      <div class="form-group1">
+        <label for="Mobile_num">Mobile Number:</label><br>
+      </div>
+      <!-- validation 3-->
+      <input type="text"  class="form-control1" name="Mobile_num" id="Mobile_num" [(ngModel)]="user.phno" required #Mobile_num="ngModel"
+          [class.is-invalid]="(Mobile_num.invalid && Mobile_num.touched) || Mobile_num.dirty" >
+       <div class="validate" *ngIf="(Mobile_num.invalid && Mobile_num.touched) || Mobile_num.dirty">
+        <small *ngIf="Mobile_num.errors?.required" class="text-danger">Mobile Number is required</small>
+        </div>
+      <!-- validation Ends-->
+      <div class="form-group1">
+        <label for="Confirm_Mobile">Confirm Mobile Number:</label><br>
+      </div>
+      <!-- validation 4-->
+      <input type="text"  class="form-control1" name="Confirm_Mobile" id="Confirm_Mobile" ngModel required #Confirm_Mobile="ngModel"
+          [class.is-invalid]="(Confirm_Mobile.invalid && Confirm_Mobile.touched) ||Confirm_Mobile.dirty" >
+       <div class="validate" *ngIf="(Confirm_Mobile.invalid &&Confirm_Mobile.touched) || Confirm_Mobile.dirty">
+        <small *ngIf="Confirm_Mobile.errors?.required" class="text-danger">conformation Mobile Number is required</small>
+        </div>
+      <!-- validation Ends-->
+    <div class="form-group1">
+        <label for="Alternate_No">Alternate Mobile Number:</label><br>
+      </div>
+      <!-- validation 5-->
+      <input type="text"  class="form-control1" name="Alternate_No" id="Alternate_No" [(ngModel)]="user.altPhno" required #Alternate_No="ngModel"
+          [class.is-invalid]="(Alternate_No.invalid && Alternate_No.touched) || Alternate_No.dirty" >
+       <div class="validate" *ngIf="(Alternate_No.invalid && Alternate_No.touched) || Alternate_No.dirty">
+        <small *ngIf="Alternate_No.errors?.required" class="text-danger">Alternate Mobile Number is required</small>
+        </div>
+      <!-- validation Ends-->
+      <div class="form-group1">
+        <label for="Aadhar_number">Aadhar Number:</label><br>
+      </div>
+       <!-- validation 6-->
+       <input type="text"  class="form-control1" name="Aadhar_number" id="Aadhar_number" [(ngModel)]="user.adharNo" required #Aadhar_number="ngModel"
+       [class.is-invalid]="(Aadhar_number.invalid && Aadhar_number.touched) || Aadhar_number.dirty" >
+    <div class="validate" *ngIf="(Aadhar_number.invalid && Aadhar_number.touched) || Aadhar_number.dirty">
+     <small *ngIf="Aadhar_number.errors?.required" class="text-danger">Aadhar Number is required</small>
+     </div>
+
+     <label for="email">Email:</label><br>
+      <input type="email"  class="form-control1" name="email" id="email" required pattern="^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" ngModel="pwd" [(ngModel)]="user.email"  #email="ngModel"
+          [class.is-invalid]="(Alternate_No.invalid && Alternate_No.touched) || Alternate_No.dirty" >
+          <div class="validate" *ngIf="(email.invalid && email.touched) || email.dirty">
+            <small *ngIf="email.errors?.required" class="text-danger">Email is required</small>
+            <small *ngIf="email.errors?.pattern" class="text-danger">Please provide a valid email address</small>
+            </div>
+   <!-- validation Ends-->
+    <!--Drop down --><br>
+    <label for="user">Type of user:</label>
+    <br/>
+
+    
+  <select class="drop" name="Typeof user:"  [(ngModel)]="user.type"> 
+  <option value="prepaid">Prepaid</option>
+  <option value="postpaid">Postpaid</option>
+  <option value="Dongle">Dongle</option>
+</select>
+   <!--drop down Ends-->
+    <br/>
+    <br/>
+    <label for="Address">Address:</label><br>
+     <!-- validation 7-->
+     <textarea type="text" rows="4" cols="50"class="form-control2" name="Address" id="address" [(ngModel)]="user.address" required #address="ngModel"
+     [class.is-invalid]="(address.invalid && address.touched) || address.dirty" ></textarea>
+  <div class="validate" *ngIf="(address.invalid && address.touched) || address.dirty">
+   <small *ngIf="address.errors?.required" class="text-danger">Address is required</small>
+   </div>
+ <!-- validation Ends-->
+    <br/><br>
+    <button [disabled]="customerForm.form.invalid" type="submit" class="btn btn-info">ADD USER</button> 
+  </form><br> <br>
+  </div>  </div></div>
+</body>

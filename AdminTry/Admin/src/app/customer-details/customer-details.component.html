@@ -1,0 +1,76 @@
+<div class="container-fluid">
+    <div class="fornavbar">
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <h3><a class="navbar-brand">VoizFonica</a></h3>
+    
+  
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto">
+
+        <li class="nav-item">
+            <a id="j2" class="nav-link" routerLink="adduser">Add Customer</a>
+        </li>
+        <li class="nav-item">
+            <a id="j2" class="nav-link" routerLink="addoffer" >Add/Edit offer</a>
+        </li>
+        <li class="nav-item">
+            <a id="j2" class="nav-link" routerLink="chat">View User Queries</a>
+        </li>
+        <li class="nav-item">
+            <a id="j2" class="nav-link" routerLink="profile">Profile</a>
+        </li>
+        <li class="nav-item">
+          <a id="j2" class="nav-link" href="/login">Logout</a>
+        </li>
+        <li id="drop1" class="nav-item dropdown">
+          <button  class="nav-link dropdown-toggle btn btn-light special" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Service
+          </button>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" routerLink="prepaid">Prepaid</a>
+            <a class="dropdown-item" routerLink="postpaid">Postpaid</a>
+            <a class="dropdown-item" routerLink="dongle">Dongle</a>
+          </div>
+        </li>
+      </ul>
+      
+      <form class="form-inline my-2 my-lg-0 " #searchForm="ngForm" (ngSubmit)="searchuser(search.value)">
+        <input class="form-control mr-sm-2" type="search" placeholder="Enter the number" aria-label="Search" #search>
+        <button class="btn btn-outline-success my-2 my-sm-0" type="submit" routerLink="search" >Search</button>
+      </form>
+
+      
+    </div>
+  </nav>
+    </div>
+    <br><br><br>
+
+    <ol><br><br><br>
+      <li *ngFor="let cust of users | async">
+          <div class="card w-85">
+          <div class="card-body">
+            <h5 class="card-title">Customer name : {{cust.fname }}</h5>
+            <p class="card-text">Number : {{cust.phno}}</p>
+            <p class="card-text">Alternate Contact Number : {{cust.altPhno}}</p>
+            <p class="card-text">Service : {{cust.type}}</p>
+            <p class="card-text">Aadhar Number : {{cust.adharNo}}</p>
+            <p class="card-text">Address : {{cust.address}}</p> 
+           </div>
+          </div><br><br>
+      </li>
+      </ol>
+
+
+
+
+    <div class="forservice">
+     <router-outlet></router-outlet>
+    </div>
+    
+
+
+
+
+<div class="body"></div>
+</div>

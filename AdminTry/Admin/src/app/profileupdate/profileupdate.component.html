@@ -1,0 +1,30 @@
+<div class="container">
+    <div class="row profile" >
+		<div class="col-sm-4" style="border-style:solid;" >
+			<div class="profile-sidebar">
+				<!-- SIDEBAR USERPIC -->
+				<div align="center"  class="profile-userpic">
+                    <img src="https://img.icons8.com/bubbles/100/000000/administrator-male.png" alt="Avatar" class="avatar">
+				</div>
+				<!-- END SIDEBAR USERPIC -->
+				<!-- SIDEBAR USER TITLE -->
+				<div class="profile-usertitle">
+					<div class="profile-usertitle-name">
+						{{name}}
+					</div>
+					<div class="profile-usertitle-job">
+						{{service}}
+					</div>
+                </div>
+            </div>
+            <button style="width:100%;" routerLink="editt">EDIT</button>
+            <button style="width:100%;">SETTINGS</button>
+            <button style="width:100%;margin-bottom: 2%;">LOGOUT</button>
+        </div>
+        <div class="col-sm-12">
+            <router-outlet></router-outlet>
+        </div>
+    </div>
+
+    
+	

@@ -1,0 +1,282 @@
+<div class="offer">
+<ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+  <li class="nav-item">
+    <a class="nav-link active" id="pills-popular_plans-tab" data-toggle="pill" href="#pills-popular_plans" role="tab" aria-controls="pills-popular_plans" aria-selected="false">POPULAR PLANS</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" id="pills-special_pack-tab" data-toggle="pill" href="#pills-special_pack" role="tab" aria-controls="pills-special_pack" aria-selected="false">SPECIAL PACK</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" id="pills-work_home-tab" data-toggle="pill" href="#pills-work_home" role="tab" aria-controls="pills-work_home" aria-selected="false">WORK FROM HOME PACK</a>
+  </li>
+  <li class="nav-item">
+      <a class="nav-link" id="pills-Dongle-tab" data-toggle="pill" href="#pills-Dongle" role="tab" aria-controls="pills-Dongle" aria-selected="false">DONGLE PACK</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" id="pills-ISD-tab" data-toggle="pill" href="#pills-ISD" role="tab" aria-controls="pills-ISD" aria-selected="false">ISD</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" id="pills-Data-tab" data-toggle="pill" href="#pills-Data" role="tab" aria-controls="pills-Data" aria-selected="false">4G DATA VOUCHER</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" id="pills-Roaming-tab" data-toggle="pill" href="#pills-Roaming" role="tab" aria-controls="pills-Roaming" aria-selected="false">INTERNATIONAL ROAMING </a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" id="pills-Top-tab" data-toggle="pill" href="#pills-Top" role="tab" aria-controls="pills-Top" aria-selected="false">TOP-UP</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" id="pills-Others-tab" data-toggle="pill" href="#pills-Others" role="tab" aria-controls="pills-Others" aria-selected="false">OTHERS</a>
+    </li>
+</ul>
+</div>
+<div class="tab-content" id="pills-tabContent">
+  <div class="tab-pane fade show active" id="pills-popular_plans" role="tabpanel" aria-labelledby="pills-popular_plans-tab">
+      <!--collapse starts-->
+      <!-- First Button -->
+      <div class="accordion" id="accordionExample">
+          <div class="card">
+            <div class="card-header" id="headingOne">
+              <h5 class="mb-0">
+                  <button class="btn btn-link" type="button" name="2GB/DAY PACKS" data-toggle="collapse" data-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                  2GB/DAY PACKS
+                </button>
+              </h5>
+            </div>
+            <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
+                <!--Form starts-->
+              <div class="container">
+                  <form class="form-inline" #addOffers="ngForm" (ngSubmit)="addOffer1()">
+                    <div class="form-group">
+                      <label for="plan" >PLAN :</label>
+                      <input type="text" class="form-control" id="plan1" placeholder="Enter Rupees" name="amount" [(ngModel)]="offers.amount">
+                      </div><br><br>
+                    <div class="form-group">
+                      <label for="validity">VALIDITY :</label><br>
+                      <input type="text" class="form-control" id="validity1" placeholder="Enter Days" name="validity" [(ngModel)]="offers.validity">
+                    </div><br><br>
+                    <div class="form-group">
+                      <label for="benefits">BENEFITS :</label><br>
+                      <input type="text" class="form-control" id="benefits1" placeholder="Enter GB" name="benefits" [(ngModel)]="offers.dataPack">
+                    </div><br><br>
+                    <br>
+                    <br>
+                    <button type="submit" class="btn btn-info" >ADD</button>
+                  </form>
+                </div>
+                <!-- Form ends -->
+            </div>
+          </div>
+          <!-- Second Button-->
+          <div class="card">
+            <div class="card-header" id="headingTwo">
+              <h5 class="mb-0">
+                <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                  3 GB/DAY PACKS
+                </button>
+              </h5>
+            </div>
+            <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+               <!--Form starts-->
+               <div class="container">
+                  <form class="form-inline" #addOffers="ngForm" (ngSubmit)="addOffer2()" autocomplete="off">
+                    <div class="form-group">
+                      <label for="plan">PLAN :</label>
+                      <input type="text" class="form-control" id="plan2" placeholder="Enter Rupees" name="amount1" [(ngModel)]="offers.amount">
+                    </div><br><br>
+                    <div class="form-group">
+                      <label for="validity">VALIDITY :</label><br>
+                      <input type="text" class="form-control" id="validity2" placeholder="Enter Days" name="validity1" [(ngModel)]="offers.validity">
+                    </div><br><br>
+                    <div class="form-group">
+                      <label for="benefits">BENEFITS :</label><br>
+                      <input type="text" class="form-control" id="benefits2" placeholder="Enter GB" name="benefits1" [(ngModel)]="offers.dataPack">
+                    </div><br><br>
+                    <br>
+                    <br>
+                    <button type="submit" class="btn btn-info">ADD</button>
+                  </form>
+                </div>
+                <!-- Form ends -->
+            </div>
+          </div>
+          <!--Third Button-->
+          <div class="card">
+            <div class="card-header" id="headingThree">
+              <h5 class="mb-0">
+                <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                 LONG TERM PACKS
+                </button>
+              </h5>
+            </div>
+            <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
+               <!--Form starts-->
+               <div class="container">
+                  <form class="form-inline" #addOffers="ngForm" (ngSubmit)="addOffer3()">
+                    <div class="form-group">
+                      <label for="plan">PLAN :</label>
+                      <input type="text" class="form-control" id="plan3" placeholder="Enter Rupees" name="email" [(ngModel)]="offers.amount">
+                    </div><br><br>
+                    <div class="form-group">
+                      <label for="validity">VALIDITY :</label><br>
+                      <input type="text" class="form-control" id="validity3" placeholder="Enter Days" name="validity" [(ngModel)]="offers.validity"> 
+                    </div><br><br>
+                    <div class="form-group">
+                      <label for="benefits">BENEFITS :</label><br>
+                      <input type="text" class="form-control" id="benefits3" placeholder="Enter GB" name="benefits" [(ngModel)]="offers.dataPack">
+                    </div><br><br>
+                    <br>
+                    <br>
+                    <button type="submit" class="btn btn-info">ADD</button>
+                  </form>
+                </div>
+                <!-- Form ends -->
+            </div>
+          </div>
+        </div>
+        <!--collapse ends--></div>
+  <div class="tab-pane fade" id="pills-special_pack" role="tabpanel" aria-labelledby="pills-special_pack-tab">
+      <!--Nav starts-->
+<!-- First Button -->
+<div class="accordion" id="accordionExample">
+  <div class="card">
+    <div class="card-header" id="headingOne">
+      <h5 class="mb-0">
+        <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+          FOOTBALL PACK
+        </button>
+      </h5>
+    </div>
+    <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
+        <!--Form starts-->
+      <div class="container">
+          <form class="form-inline" #addOffers="ngForm" (ngSubmit)="addOffer4()">
+            <div class="form-group">
+              <label for="plan">PLAN :</label>
+              <input type="text" class="form-control" id="plan4" placeholder="Enter Rupees" name="amount" [(ngModel)]="offers.amount">
+            </div><br><br>
+            <div class="form-group">
+              <label for="validity">VALIDITY :</label><br>
+              <input type="text" class="form-control" id="validity4" placeholder="Enter days" name="validity" [(ngModel)]="offers.validity">
+            </div><br><br>
+            <div class="form-group">
+              <label for="benefits">BENEFITS :</label><br>
+              <input type="text" class="form-control" id="benefits4" placeholder="Enter GB" name="benefits" [(ngModel)]="offers.dataPack">
+            </div><br><br>
+            <br>
+            <br>
+            <button type="submit" class="btn btn-info">ADD</button>
+          </form>
+        </div>
+        <!-- Form ends -->
+    </div>
+  </div>
+  <!-- Second Button-->
+  <div class="card">
+    <div class="card-header" id="headingTwo">
+      <h5 class="mb-0">
+        <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+          DATA ADD ON PACKS
+        </button>
+      </h5>
+    </div>
+    <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+       <!--Form starts-->
+       <div class="container">
+          <form class="form-inline" #addOffers="ngForm" (ngSubmit)="addOffer5()">
+            <div class="form-group">
+              <label for="plan">PLAN :</label>
+              <input type="text" class="form-control" id="plan5" placeholder="Enter Rupees" name="amount" [(ngModel)]="offers.amount">
+            </div><br><br>
+            <div class="form-group">
+              <label for="validity">VALIDITY :</label><br>
+              <input type="text" class="form-control" id="validity5" placeholder="Enter days" name="validity" [(ngModel)]="offers.validity">
+            </div><br><br>
+            <div class="form-group">
+              <label for="benefits">BENEFITS :</label><br>
+              <input type="text" class="form-control" id="benefits5" placeholder="Enter GB" name="benefits" [(ngModel)]="offers.dataPack">
+            </div><br><br>
+            <br>
+            <br>
+            <button type="submit" class="btn btn-info">ADD</button>
+          </form>
+        </div>
+        <!-- Form ends -->
+    </div>
+  </div>
+  <!--Third Button-->
+  <div class="card">
+    <div class="card-header" id="headingThree">
+      <h5 class="mb-0">
+        <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+         LONG TERM VOICE PACK
+        </button>
+      </h5>
+    </div>
+    <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
+       <!--Form starts-->
+       <div class="container">
+          <form class="form-inline" #addOffers="ngForm" (ngSubmit)="addOffer6()">
+            <div class="form-group">
+              <label for="plan">PLAN :</label>
+              <input type="text" class="form-control" id="plan6" placeholder="Enter Rupees" name="amount" [(ngModel)]="offers.amount">
+            </div><br><br>
+            <div class="form-group">
+              <label for="validity">VALIDITY :</label><br>
+              <input type="text" class="form-control" id="validity6" placeholder="Enter days" name="validity" [(ngModel)]="offers.validity">
+            </div><br><br>
+            <div class="form-group">
+              <label for="benefits">BENEFITS :</label><br>
+              <input type="text" class="form-control" id="benefits6" placeholder="Enter GB" name="benefits" [(ngModel)]="offers.dataPack">
+            </div><br><br>
+            <br>
+            <br>
+            <button type="submit" class="btn btn-info">ADD</button>
+          </form>
+        </div>
+        <!-- Form ends -->
+    </div>
+  </div>
+</div>
+<!--Nav ends-->
+  </div>
+  <div class="tab-pane fade" id="pills-work_home" role="tabpanel" aria-labelledby="pills-work_home-tab">
+      <!--Third Button-->
+  <div class="card">
+      <div class="card-header" id="headingThree">
+        <h5 class="mb-0">
+          <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+           LONG TERM VOICE PACK
+          </button>
+        </h5>
+      </div>
+      <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
+         <!--Form starts-->
+         <div class="container">
+            <form class="form-inline" #addOffers="ngForm" (ngSubmit)="addOffer7()">
+              <div class="form-group">
+                <label for="plan">PLAN :</label>
+                <input type="text" class="form-control" id="plan7" placeholder="Enter Rupees" name="amount" [(ngModel)]="offers.amount">
+              </div><br><br>
+              <div class="form-group">
+                <label for="validity">VALIDITY :</label><br>
+                <input type="text" class="form-control" id="validity7" placeholder="Enter days" name="validity" [(ngModel)]="offers.validity">
+              </div><br><br>
+              <div class="form-group">
+                <label for="benefits">BENEFITS :</label><br>
+                <input type="text" class="form-control" id="benefits7" placeholder="Enter GB" name="benefits" [(ngModel)]="offers.dataPack">
+              </div><br><br>
+              <br>
+              <br>
+              <button type="submit" class="btn btn-info">ADD</button>
+            </form>
+          </div>
+          <!-- Form ends -->
+      </div>
+  </div>
+  <div class="tab-pane fade" id="pills-Dongle" role="tabpanel" aria-labelledby="pills-Dongle-tab"></div>
+  <div class="tab-pane fade" id="pills-ISD" role="tabpanel" aria-labelledby="pills-ISD-tab"></div>
+  <div class="tab-pane fade" id="pills-Roaming" role="tabpanel" aria-labelledby="pills-Roaming-tab"></div>
+  <div class="tab-pane fade" id="pills-Top" role="tabpanel" aria-labelledby="pills-Top-tab"></div>
+  <div class="tab-pane fade" id="pills-Others" role="tabpanel" aria-labelledby="pills-Others-tab"></div>
+
+</div> 

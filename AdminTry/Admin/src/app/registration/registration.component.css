@@ -1,0 +1,44 @@
+.Register
+{
+    background-image:url("src/assets/Images/login.jpg");    
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: auto;
+    background-position: center center;
+    margin:0px;
+    
+}
+.Register-form {
+    padding: 50px 60px 70px 60px;
+    width: 586px;
+    height: auto;
+    background: #fff;
+    margin-left: 165px;
+    border-radius: 10px;
+    border-bottom-width: 20%;
+    
+ }
+ #fname,#lname,#email,#id,#psw,#psw-repeat,#ph{
+    width: 100%;
+    display: block;
+    border: none;
+    border-bottom: 2px solid #ebebeb;
+    padding: 5px 0;
+    color: #222;
+    margin-bottom: 31px;
+    font-family: 'Roboto Slab';
+     }
+ input:focus{
+      color: #222;
+      border-bottom: 2px solid #4966b1; 
+    }
+#agree-term
+{
+    margin-top: 5px;
+    float: left;
+}
+.validate
+{
+    margin-top: 0px;
+    margin-bottom: 10px;
+}

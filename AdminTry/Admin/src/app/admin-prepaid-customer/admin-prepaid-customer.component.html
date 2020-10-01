@@ -1,0 +1,76 @@
+<div class="service">
+<ol>
+<li *ngFor="let cust of customers | async ; let i = index" [attr.data-index]="i">
+    <div class="card w-85">
+    <div class="card-body">
+      <h5 class="card-title">Customer name : {{cust.fname }}</h5>
+      <p class="card-text">Number : {{cust.phno}}</p>
+      <p class="card-text">Alternate Contact Number : {{cust.altPhno}}</p>
+      <p class="card-text">Service : {{cust.type}}</p>
+      <p class="card-text">Aadhar Number : {{cust.adharNo}}</p>
+      <p class="card-text">Address : {{cust.address}}</p>
+      
+      
+
+      <button type="button" class="btn btn-primary" data-toggle="modal" [attr.data-target]="'#MyModal'+cust.phno">
+        Edit
+      </button><span>&nbsp;&nbsp;</span>
+      <button type="button" class="btn btn-danger" (click)="delete(cust)" >
+        Delete
+      </button>
+      
+      <!-- Modal -->
+      <div class="modal fade" [attr.id]="'MyModal'+cust.phno" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <form #customerForm="ngForm" (ngSubmit)="update (cust)">
+              <label for="First_name">First name:</label><br>
+              <input type="text"  class="form-control1" name="First_name" id="First_name"  [(ngModel)]="cust.fname" >
+
+              <label for="Last_name">Last name:</label><br>
+              <input type="text"  class="form-control1" name="Last_name" id="Lastt_name"  [(ngModel)]="cust.lname">
+        
+              <label for="Alternate_No">Alternate Mobile Number:</label><br>
+              <input type="text"  class="form-control1" name="Alternate_No" id="Alternate_No" [(ngModel)]="cust.altPhno">
+
+             
+              <label for="Aadhar_number">Aadhar Number:</label><br>
+              <input type="text"  class="form-control1" name="Aadhar_number" id="Aadhar_number" [(ngModel)]="cust.adharNo">
+          
+             <label for="user">Type of user:</label>
+             <br/>
+            <select class="drop" name="Typeof user:" [(ngModel)]="cust.type"> 
+           <option value="Prepaid">Prepaid</option>
+           <option value="Postpaid">Postpaid</option>
+           <option value="Dongle">Dongle</option>
+            </select>
+
+            <br>
+            <br>
+
+            <label for="Address">Address:</label><br>
+            <textarea type="text" rows="4" cols="50"class="form-control2" name="Address" id="address"  [(ngModel)]="cust.address"></textarea>
+            <br/><br>
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button><span>&nbsp;&nbsp;&nbsp;</span>
+            <button type="submit" class="btn btn-primary">Save changes</button>
+            </form>
+            </div>
+            
+          </div>
+        </div>
+      </div>
+
+
+      
+    </div>
+    </div><br><br>
+</li>
+</ol>
+</div>
